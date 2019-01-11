@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="GNS3模拟ASA8.4(2)激活license"/>
+
+
+
+
+  <meta name="keywords" content="network, asa, I'm Mansur" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="I'm Mansur">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2" />
+
+
+
+<link rel="canonical" href="http://nbma.info/gns3-asa842-license/"/>
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" />
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2" />
+
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126503503-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126503503-1');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> GNS3模拟ASA8.4(2)激活license - I'm Mansur </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">I'm Mansur</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">I'm Mansur</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          GNS3模拟ASA8.4(2)激活license
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-02-29
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/技术笔记/">技术笔记</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <p>正常情况下，用GNS3模拟ASA8.4，模拟出来的系统failover、VPN-DES、VPN-3DES-AES功能是disabled的。需要用liences激活，激活过程如下：</p>
+<a id="more"></a>
+<p>show ver可以看到没激活的功能：</p>
+<p>ciscoasa(config)# show ver</p>
+<p>Cisco Adaptive Security Appliance Software Version 8.4(2)</p>
+<p>Compiled on Wed 15-Jun-11 18:17 by builders<br>System image file is “Unknown, monitor mode tftp booted image”<br>Config file at boot was “startup-config”</p>
+<p>ciscoasa up 1 hour 13 mins</p>
+<p>Hardware: ASA 5520, 512 MB RAM, CPU Pentium II 1000 MHz<br>Internal ATA Compact Flash, 256MB<br>BIOS Flash unknown @ 0x0, 0KB<br>0: Ext: GigabitEthernet0 : address is 0000.aba3.be00, irq 0<br>1: Ext: GigabitEthernet1 : address is 0000.aba3.be01, irq 0<br>2: Ext: GigabitEthernet2 : address is 0000.aba3.be02, irq 0<br>3: Ext: GigabitEthernet3 : address is 0000.aba3.be03, irq 0</p>
+<p>Licensed features for this platform:<br>Maximum Physical Interfaces : Unlimited perpetual<br>Maximum VLANs : 100 perpetual<br>Inside Hosts : Unlimited perpetual<br><span style="color: #ff0000;">Failover : Disabled perpetual</span><br><span style="color: #ff0000;">VPN-DES : Disabled perpetual</span><br><span style="color: #ff0000;">VPN-3DES-AES : Disabled perpetual</span><br>Security Contexts : 0 perpetual<br>GTP/GPRS : Disabled perpetual<br>AnyConnect Premium Peers : 5000 perpetual<br>AnyConnect Essentials : Disabled perpetual<br>Other VPN Peers : 5000 perpetual<br>Total VPN Peers : 0 perpetual<br>Shared License : Disabled perpetual<br>AnyConnect for Mobile : Disabled perpetual<br>AnyConnect for Cisco VPN Phone : Disabled perpetual<br>Advanced Endpoint Assessment : Disabled perpetual<br>UC Phone Proxy Sessions : 2 perpetual<br>Total UC Proxy Sessions : 2 perpetual<br>Botnet Traffic Filter : Disabled perpetual<br>Intercompany Media Engine : Disabled perpetual</p>
+<p>This platform has an ASA 5520 VPN Plus license.</p>
+<p>Serial Number: 123456789AB<br>Running Permanent Activation Key: 0x00000000 0x00000000 0x00000000 0x00000000 0x00000000<br>Configuration register is 0x0<br>Configuration last modified by enable_15 at 08:15:56.899 UTC Mon Feb 29 2016</p>
+<p>&nbsp;</p>
+<p>进入config模式，输入license</p>
+<p>ciscoasa(config)# <span style="color: #ff0000;">activation-key 0x4a3ec071 0x0d86fbf6 0x7cb1bc48 0x8b48b8b0 0$</span><br>Validating activation key. This may take a few minutes…<br>Failed to retrieve permanent activation key.<br>Failover is different.<br>running permanent activation key: Restricted(R)<br>new permanent activation key: Unrestricted(UR)<br>WARNING: The running activation key was not updated with the requested key.<br>Proceed with update flash activation key? [confirm]<br>The flash permanent activation key was updated with the requested key,<br>and will become active after the next reload.<br>ciscoasa(config)#<span style="color: #ff0000;"> activation-key 0xb23bcf4a 0x1c713b4f 0x7d53bcbc 0xc4f8d09c 0$</span><br>Validating activation key. This may take a few minutes…<br>Failover is different.<br>running permanent activation key: Restricted(R)<br>new permanent activation key: Unrestricted(UR)<br>WARNING: The running activation key was not updated with the requested key.<br>Proceed with update flash activation key? [confirm]<br>The flash permanent activation key was updated with the requested key,<br>and will become active after the next reload.<br>ciscoasa(config)# <span style="color: #ff0000;">reload</span></p>
+<p>重启之后：</p>
+<p>ciscoasa# show version</p>
+<p>Cisco Adaptive Security Appliance Software Version 8.4(2)</p>
+<p>Compiled on Wed 15-Jun-11 18:17 by builders<br>System image file is “Unknown, monitor mode tftp booted image”<br>Config file at boot was “startup-config”</p>
+<p>ciscoasa up 11 secs</p>
+<p>Hardware: ASA 5520, 512 MB RAM, CPU Pentium II 1000 MHz<br>Internal ATA Compact Flash, 256MB<br>BIOS Flash unknown @ 0x0, 0KB<br>0: Ext: GigabitEthernet0 : address is 0000.ab2c.3a00, irq 0<br>1: Ext: GigabitEthernet1 : address is 0000.ab2c.3a01, irq 0<br>2: Ext: GigabitEthernet2 : address is 0000.ab2c.3a02, irq 0<br>3: Ext: GigabitEthernet3 : address is 0000.ab2c.3a03, irq 0</p>
+<p>Licensed features for this platform:<br>Maximum Physical Interfaces : Unlimited perpetual<br>Maximum VLANs : 100 perpetual<br>Inside Hosts : Unlimited perpetual<br><span style="color: #ff0000;">Failover : Active/Active perpetual</span><br><span style="color: #ff0000;">VPN-DES : Enabled perpetual</span><br><span style="color: #ff0000;">VPN-3DES-AES : Enabled perpetual</span><br>Security Contexts : 5 perpetual<br>GTP/GPRS : Disabled perpetual<br>AnyConnect Premium Peers : 25 perpetual<br>AnyConnect Essentials : Disabled perpetual<br>Other VPN Peers : 5000 perpetual<br>Total VPN Peers : 0 perpetual<br>Shared License : Enabled perpetual<br>AnyConnect for Mobile : Disabled perpetual<br>AnyConnect for Cisco VPN Phone : Disabled perpetual<br>Advanced Endpoint Assessment : Enabled perpetual<br>UC Phone Proxy Sessions : 10 perpetual<br>Total UC Proxy Sessions : 10 perpetual<br>Botnet Traffic Filter : Enabled perpetual<br>Intercompany Media Engine : Enabled perpetual</p>
+<p>This platform has an ASA 5520 VPN Plus license.</p>
+<p>Serial Number: 123456789AB<br>Running Permanent Activation Key: 0xb23bcf4a 0x1c713b4f 0x7d53bcbc 0xc4f8d09c 0x0e24c6b6<br>Configuration register is 0x0<br>Configuration has not been modified since last system restart.<br>ciscoasa#</p>
+<p>已激活</p>
+<p>下面是两个license:</p>
+<p>用这两条命令分两次激活，第一次很快，第二次很慢，估计需要六七分钟。</p>
+<p><strong>activation-key 0x4a3ec071 0x0d86fbf6 0x7cb1bc48 0x8b48b8b0 0xf317c0b5</strong><br><strong>activation-key 0xb23bcf4a 0x1c713b4f 0x7d53bcbc 0xc4f8d09c 0x0e24c6b6</strong></p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://nbma.info">Mansur</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://nbma.info/gns3-asa842-license/">http://nbma.info/gns3-asa842-license/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/network/">network</a>
+            
+              <a href="/tags/asa/">asa</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/csico2911k-securityk9-license/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">csico2911/k9激活securityk9的license</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/asa-cpu98/">
+        <span class="next-text nav-default">ASA告警，cpu98%</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:i@nbma.info" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://twitter.com/iam__Peter" class="iconfont icon-twitter" title="twitter"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2013 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Mansur</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://nbma.info/gns3-asa842-license/';
+        this.page.identifier = 'gns3-asa842-license/';
+        this.page.title = 'GNS3模拟ASA8.4(2)激活license';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//nbma.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

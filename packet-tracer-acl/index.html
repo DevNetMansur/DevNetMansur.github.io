@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="练习 5.6.1:Packet Tracer 综合技能练习（访问控制列表）"/>
+
+
+
+
+  <meta name="keywords" content="cisco, I'm Mansur" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="I'm Mansur">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2" />
+
+
+
+<link rel="canonical" href="http://nbma.info/packet-tracer-acl/"/>
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" />
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2" />
+
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126503503-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126503503-1');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 练习 5.6.1:Packet Tracer 综合技能练习（访问控制列表） - I'm Mansur </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">I'm Mansur</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">I'm Mansur</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          练习 5.6.1:Packet Tracer 综合技能练习（访问控制列表）
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2013-07-12
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/技术笔记/">技术笔记</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <p><img src="http://ww4.sinaimg.cn/mw690/68e0aeafjw1e6k27jsh99j20lw0f4408.jpg" alt=""></p>
+<a id="more"></a>
+<p><span style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif;">地址表</span></p>
+<p><img src="http://ww1.sinaimg.cn/mw690/68e0aeafjw1e6k27kb93oj20cz0aegn8.jpg" alt=""></p>
+<p>简介</p>
+<p>在本练习中，您需要演练配置实施五项安全策略的 ACL 的技能。此外，您还要配置 PPP 和 OSPF 路由。设备已配置了 IP 地址。用户执行口令是 <strong>cisco</strong>，特权执行口令是 <strong>class</strong>。</p>
+<p>任务 1：配置带有 CHAP 身份验证的 PPP步骤 1. 将 HQ 和 B1 之间的链路配置为使用带有 CHAP 身份验证的 PPP 封装。</p>
+<p>CHAP 身份验证的口令是 <strong>cisco123</strong>。</p>
+<p>B1:</p>
+<p>username HQ password cisco123</p>
+<p>interface Serial0/0/0<br>encapsulation ppp<br>ppp authentication chap</p>
+<p>HQ:</p>
+<p>username B1 password 0 cisco123</p>
+<p>interface Serial0/0/0<br>encapsulation ppp<br>ppp authentication chap</p>
+<p>步骤 2. 将 HQ 和 B2 之间的链路配置为使用带有 CHAP 身份验证的 PPP 封装。</p>
+<p>CHAP 身份验证的口令是 <strong>cisco123</strong>。</p>
+<p>B2:</p>
+<p>username HQ password 0 cisco123</p>
+<p>interface Serial0/0/0<br>encapsulation ppp<br>ppp authentication chap</p>
+<p>HQ:</p>
+<p>username B2 password 0 cisco123</p>
+<p>interface Serial0/0/1<br>encapsulation ppp<br>ppp authentication chap</p>
+<p>步骤 3. 检查路由器之间是否已恢复连通性。</p>
+<p>HQ 应能 ping 通 B1 和 B2。接口恢复可能需要几分钟。在 Realtime（实时）模式和 Simulation（模拟）模式之间来回切换可加快此过程。要让 Packet Tracer 加快此过程，另一种可行的方法是对接口使用 <strong>shutdown</strong> 和 <strong>no shutdown</strong> 命令。</p>
+<p><strong>注：由于 Packet Tracer 程序缺陷，接口可能会在练习期间的任何时候随机关闭。请等待几秒钟，通常接口会自行重新打开。</strong></p>
+<p>步骤 4. 检查结果。</p>
+<p>完成比例应为 29%。如果并非如此，请单击 <strong>Check Results（检查结果）</strong>查看尚未完成哪些必要部分。</p>
+<p>任务 2：配置默认路由步骤 1. 配置从 HQ 到 ISP 的默认路由。</p>
+<p>在 HQ 上使用<em>送出接口</em>参数配置默认路由，将所有默认流量发送到 ISP。</p>
+<p>ip route 0.0.0.0 0.0.0.0 Serial0/1/0</p>
+<p>步骤 2. 测试与 Web Server 的连通性。</p>
+<p>从 HQ 的 Serial0/1/0 接口发出 ping。HQ 应该能成功 ping 通 Web Server (209.165.202.130)。</p>
+<p>步骤 3. 检查结果。</p>
+<p>完成比例应为 32%。如果并非如此，请单击 <strong>Check Results（检查结果）</strong>查看尚未完成哪些必要部分。</p>
+<p>任务 3：配置 OSPF 路由步骤 1. 在 HQ 上配置 OSPF。</p>
+<ul>
+<li>使用进程 ID 1 配置 OSPF。</li>
+<li>通告除 209.165.201.0 网络外的所有子网。</li>
+<li>向 OSPF 相邻设备传播默认路由。</li>
+<li>在接入 ISP 和接入 HQ LAN 的接口上禁用 OSPF 更新。<br>HQ:</li>
+</ul>
+<p>router ospf 1<br>passive-interface FastEthernet0/0<br>passive-interface FastEthernet0/1<br>passive-interface Serial0/1/0<br>network 10.1.50.0 0.0.0.255 area 0<br>network 10.1.40.0 0.0.0.255 area 0<br>network 10.1.1.0 0.0.0.3 area 0<br>network 10.1.1.4 0.0.0.3 area 0<br>default-information originate</p>
+<p>步骤 2. 在 B1 和 B2 上配置 OSPF。</p>
+<ul>
+<li>使用进程 ID 1 配置 OSPF。</li>
+<li>在每台路由器上配置适当的子网。</li>
+<li>在接入 LAN 的接口上禁用 OSPF 更新。<br>B1:</li>
+</ul>
+<p>router ospf 1<br>passive-interface FastEthernet0/0<br>passive-interface FastEthernet0/1<br>network 10.1.1.0 0.0.0.3 area 0<br>network 10.1.10.0 0.0.0.255 area 0<br>network 10.1.20.0 0.0.0.255 area 0</p>
+<p>B2:</p>
+<p>router ospf 1<br>passive-interface FastEthernet0/0<br>passive-interface FastEthernet0/1<br>network 10.1.1.4 0.0.0.3 area 0<br>network 10.1.70.0 0.0.0.255 area 0<br>network 10.1.80.0 0.0.0.255 area 0</p>
+<p>步骤 3. 测试整个网络的连通性。</p>
+<p>现在，网络应该实现了完全的端到端连通性。所有设备均应能够成功 ping 通所有其它设备，包括地址为 209.165.202.130 的 Web Server。</p>
+<p>步骤 4. 检查结果。</p>
+<p>完成比例应为 76%。如果并非如此，请单击 <strong>Check Results（检查结果）</strong>查看尚未完成哪些必要部分。</p>
+<p>任务 4：实施多项 ACL 安全策略步骤 1. 实施第一项安全策略。</p>
+<p>阻止 10.1.10.0 网络访问 10.1.40.0 网络。允许对 10.1.40.0 的所有其它访问。在 HQ 上使用 ACL 编号 10 配置 ACL。</p>
+<p>HQ:<br>access-list 10 deny 10.1.10.0 0.0.0.255<br>access-list 10 permit any</p>
+<p>interface FastEthernet0/1<br>ip access-group 10 out</p>
+<p>步骤 2. 检查第一项安全策略是否已实现。</p>
+<p>从 PC5 ping PC1 应该失败。</p>
+<p>步骤 3. 检查结果。</p>
+<p>完成比例应为 80%。如果并非如此，请单击 <strong>Check Results（检查结果）</strong>查看尚未完成哪些必要部分。</p>
+<p>步骤 4. 实施第二项安全策略。</p>
+<p>拒绝主机 10.1.10.5 访问主机 10.1.50.7。允许所有其它主机访问 10.1.50.7。在 B1 上使用 ACL 编号 115 配置 ACL。</p>
+<p>B1:</p>
+<p>access-list 115 deny ip host 10.1.10.5 host 10.1.50.7<br>access-list 115 permit ip any any</p>
+<p>interface FastEthernet0/0<br>ip access-group 115 in</p>
+<p>步骤 5. 检查第二项安全策略是否已实现。</p>
+<p>从 PC5 ping PC3 应该失败。</p>
+<p>步骤 6. 检查结果。</p>
+<p>完成比例应为 85%。如果并非如此，请单击 <strong>Check Results（检查结果）</strong>查看尚未完成哪些必要部分。</p>
+<p>步骤 7. 实施第三项安全策略。</p>
+<p>拒绝从 10.1.50.1 到 10.1.50.63 的主机通过 Web 访问地址为 10.1.80.16 的内部网服务器。允许所有其它访问。在适当的路由器上使用 ACL 编号 101 配置 ACL。</p>
+<p>HQ:</p>
+<p>access-list 101 deny tcp 10.1.50.0 0.0.0.63 host 10.1.80.16 eq www<br>access-list 101 permit ip any any</p>
+<p>interface FastEthernet0/0<br>ip access-group 101 in</p>
+<p>步骤 8. 检查第三项安全策略是否已实现。</p>
+<p>要测试此策略，请单击 PC3，然后单击 <strong>Desktop（桌面）</strong>选项卡，再单击<strong>Web Browser（Web 浏览器）</strong>。URL 应键入内部网服务器的 IP 地址 10.1.80.16，然后按 <strong>Enter</strong>。几秒后应收到 Request Timeout（请求超时）消息。PC2 和该网络中的所有其它 PC 都应该能够访问内部网服务器。</p>
+<p>步骤 9. 检查结果。</p>
+<p>完成比例应为 90%。如果并非如此，请单击 <strong>Check Results（检查结果）</strong>查看尚未完成哪些必要部分。</p>
+<p>步骤 10. 实施第四项安全策略。</p>
+<p>使用名称 <strong>NO_FTP</strong> 配置命名 ACL，阻止 10.1.70.0/24 网络访问文件服务器 (10.1.10.2) 上的 FTP 服务（端口 21）。所有其它访问都应允许。</p>
+<p>注意：名称区分大小写。</p>
+<p>B2:</p>
+<p>ip access-list extended NO_FTP<br>deny tcp 10.1.70.0 0.0.0.255 host 10.1.10.2 eq ftp<br>permit ip any any</p>
+<p>interface FastEthernet0/1<br>ip access-group NO_FTP in</p>
+<p>步骤 11. 检查结果。</p>
+<p>Packet Tracer 不支持测试 FTP 访问，因此您无法检验此策略。不过，完成比例应为 95%。如果并非如此，请单击 <strong>Check Results（检查结果）</strong>查看尚未完成哪些必要部分。</p>
+<p>步骤 12. 实施第五项安全策略。</p>
+<p>由于 ISP 代表与 Internet 之间的连通性，因此请按照下列顺序配置名为<strong>FIREWALL</strong> 的命名 ACL：</p>
+<div id="content"><br><br><em>   仅允许来自 ISP 和来自 ISP 之外任何源地址的入站 ping 应答。
+</em>   仅允许来自 ISP 和来自 ISP 之外任何源地址的已建立 TCP 会话。<br>*   明确阻止来自 ISP 和来自 ISP 之外任何源地址的所有其它入站访问HQ:ip access-list extended FIREWALL<br>permit icmp any any echo-reply<br>permit tcp any any established<br>deny ip any any<br><br>    interface Serial0/1/0<br>description Link to ISP<br>ip access-group FIREWALL in<br>步骤 13. 检查第五项安全策略是否已实现。此策略的测试结果应该是任何 PC 都能 ping 通 ISP 或 Web Server。但 ISP 和 Web Server 应该都无法 ping 通 HQ 或 <strong>FIREWALL</strong> ACL 后的任何其它设备。</div><br><div></div>
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://nbma.info">Mansur</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://nbma.info/packet-tracer-acl/">http://nbma.info/packet-tracer-acl/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/cisco/">cisco</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/centos-dns-unresolution/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">CentOS系统DNS不能解析问题</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/packet-tracer-hsrp/">
+        <span class="next-text nav-default">网关冗余（HSRP）</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:i@nbma.info" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://twitter.com/iam__Peter" class="iconfont icon-twitter" title="twitter"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2013 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Mansur</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://nbma.info/packet-tracer-acl/';
+        this.page.identifier = 'packet-tracer-acl/';
+        this.page.title = '练习 5.6.1:Packet Tracer 综合技能练习（访问控制列表）';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//nbma.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

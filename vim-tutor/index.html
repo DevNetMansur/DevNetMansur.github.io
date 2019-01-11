@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="vim中文入门指南"/>
+
+
+
+
+  <meta name="keywords" content="centos, I'm Mansur" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="I'm Mansur">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2" />
+
+
+
+<link rel="canonical" href="http://nbma.info/vim-tutor/"/>
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" />
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2" />
+
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126503503-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126503503-1');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> vim中文入门指南 - I'm Mansur </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">I'm Mansur</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">I'm Mansur</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          vim中文入门指南
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-02-26
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/技术笔记/">技术笔记</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一讲：基础"><span class="toc-text">第一讲：基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二讲：删除"><span class="toc-text">第二讲：删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三讲：置入"><span class="toc-text">第三讲：置入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四讲：查找替换"><span class="toc-text">第四讲：查找替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五讲小结"><span class="toc-text">第五讲小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第六讲小结"><span class="toc-text">第六讲小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第七讲小结"><span class="toc-text">第七讲小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#from-V2ex"><span class="toc-text">from V2ex</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <!--markdown-->vimtutor这个很6 啊，mac下还是中文<br><br><br><a id="more"></a>
+<h2 id="第一讲：基础"><a href="#第一讲：基础" class="headerlink" title="第一讲：基础"></a>第一讲：基础</h2><ol>
+<li><p>光标在屏幕文本中的移动既可以用箭头键，也可以使用 hjkl 字母键。</p>
+<pre><code>h (左移)       j (下行)       k (上行)     l (右移)
+</code></pre></li>
+<li><p>欲进入 Vim 编辑器(从命令行提示符)，请输入：vim 文件名 &lt;回车&gt;</p>
+</li>
+<li><p>欲退出 Vim 编辑器，请输入 <esc>   :q!   &lt;回车&gt; 放弃所有改动。<br>或者输入 <esc>   :wq   &lt;回车&gt; 保存改动。</esc></esc></p>
+</li>
+<li><p>在正常模式下删除光标所在位置的字符，请按： x</p>
+</li>
+<li><p>欲插入或添加文本，请输入：</p>
+<pre><code>i   输入欲插入文本   &lt;ESC&gt;             在光标前插入文本
+A   输入欲添加文本   &lt;ESC&gt;             在一行后添加文本
+</code></pre></li>
+</ol>
+<p>特别提示：按下 <esc> 键会带您回到正常模式或者撤消一个不想输入或部分完整<br>的命令。</esc></p>
+<h2 id="第二讲：删除"><a href="#第二讲：删除" class="headerlink" title="第二讲：删除"></a>第二讲：删除</h2><ol>
+<li>欲从当前光标删除至下一个单词，请输入：dw</li>
+<li>欲从当前光标删除至当前行末尾，请输入：d$</li>
+<li><p>欲删除整行，请输入：dd</p>
+</li>
+<li><p>欲重复一个动作，请在它前面加上一个数字：2w</p>
+</li>
+<li><p>在正常模式下修改命令的格式是：<br>operator   [number]   motion<br>其中：</p>
+<p>  operator - 操作符，代表要做的事情，比如 d 代表删除<br>  [number] - 可以附加的数字，代表动作重复的次数<br>  motion   - 动作，代表在所操作的文本上的移动，例如 w 代表单词(word)，$ 代表行末等等。</p>
+</li>
+<li><p>欲移动光标到行首，请按数字0键：0</p>
+</li>
+<li><p>欲撤消以前的操作，请输入：u (小写的u)<br>欲撤消在一行中所做的改动，请输入：U (大写的U)<br>欲撤消以前的撤消命令，恢复以前的操作结果，请输入：CTRL-R</p>
+</li>
+</ol>
+<h2 id="第三讲：置入"><a href="#第三讲：置入" class="headerlink" title="第三讲：置入"></a>第三讲：置入</h2><ol>
+<li><p>要重新置入已经删除的文本内容，请按小写字母 p 键。该操作可以将已删除的文本内容置于光标之后。如果最后一次删除的是一个整行，那么该行将置于当前光标所在行的下一行。</p>
+</li>
+<li><p>要替换光标所在位置的字符，请输入小写的 r 和要替换掉原位置字符的新字符即可。</p>
+</li>
+<li><p>更改类命令允许您改变从当前光标所在位置直到动作指示的位置中间的文本。<br>比如输入 ce 可以替换当前光标到单词的末尾的内容；输入 c$ 可以替换当前光标到行末的内容。</p>
+</li>
+<li><p>更改类命令的格式是：</p>
+<pre><code>c   [number]   motion
+</code></pre></li>
+</ol>
+<h2 id="第四讲：查找替换"><a href="#第四讲：查找替换" class="headerlink" title="第四讲：查找替换"></a>第四讲：查找替换</h2><ol>
+<li><p>CTRL-G 用于显示当前光标所在位置和文件状态信息。<br>G 用于将光标跳转至文件最后一行。<br>先敲入一个行号然后输入大写 G 则是将光标移动至该行号代表的行。<br>gg 用于将光标跳转至文件第一行。</p>
+</li>
+<li><p>输入 / 然后紧随一个字符串是在当前所编辑的文档中正向查找该字符串。<br>输入 ? 然后紧随一个字符串则是在当前所编辑的文档中反向查找该字符串。<br>完成一次查找之后按 n 键是重复上一次的命令，可在同一方向上查<br>找下一个匹配字符串所在；或者按大写 N 向相反方向查找下一匹配字符串所在。<br>CTRL-O 带您跳转回较旧的位置，CTRL-I 则带您到较新的位置。</p>
+</li>
+<li><p>如果光标当前位置是括号(、)、[、]、{、}，按 % 会将光标移动到配对的括号上。</p>
+</li>
+<li><p>在一行内替换头一个字符串 old 为新的字符串 new，请输入  :s/old/new<br>在一行内替换所有的字符串 old 为新的字符串 new，请输入  :s/old/new/g<br>在两行内替换所有的字符串 old 为新的字符串 new，请输入  :#,#s/old/new/g<br>在文件内替换所有的字符串 old 为新的字符串 new，请输入  :%s/old/new/g<br>进行全文替换时询问用户确认每个替换需添加 c 标志        :%s/old/new/gc</p>
+</li>
+</ol>
+<h2 id="第五讲小结"><a href="#第五讲小结" class="headerlink" title="第五讲小结"></a>第五讲小结</h2><ol>
+<li><p>:!command 用于执行一个外部命令 command。</p>
+<p>请看一些实际例子：</p>
+<pre><code>(MS-DOS)         (Unix)
+ :!dir            :!ls            -  用于显示当前目录的内容。
+ :!del FILENAME   :!rm FILENAME   -  用于删除名为 FILENAME 的文件。
+</code></pre></li>
+<li><p>:w FILENAME  可将当前 VIM 中正在编辑的文件保存到名为 FILENAME 的文<br>件中。</p>
+</li>
+<li><p>v motion :w FILENAME 可将当前编辑文件中可视模式下选中的内容保存到文件<br>FILENAME 中。</p>
+</li>
+<li><p>:r FILENAME 可提取磁盘文件 FILENAME 并将其插入到当前文件的光标位置<br>后面。</p>
+</li>
+<li><p>:r !dir 可以读取 dir 命令的输出并将其放置到当前文件的光标位置后面。</p>
+</li>
+</ol>
+<h2 id="第六讲小结"><a href="#第六讲小结" class="headerlink" title="第六讲小结"></a>第六讲小结</h2><ol>
+<li><p>输入小写的 o 可以在光标下方打开新的一行并进入插入模式。<br>输入大写的 O 可以在光标上方打开新的一行。</p>
+</li>
+<li><p>输入小写的 a 可以在光标所在位置之后插入文本。<br>输入大写的 A 可以在光标所在行的行末之后插入文本。</p>
+</li>
+<li><p>e 命令可以使光标移动到单词末尾。</p>
+</li>
+<li><p>操作符 y 复制文本，p 粘贴先前复制的文本。</p>
+</li>
+<li><p>输入大写的 R 将进入替换模式，直至按 <esc> 键回到正常模式。</esc></p>
+</li>
+<li><p>输入 :set xxx 可以设置 xxx 选项。一些有用的选项如下：<br>   ‘ic’ ‘ignorecase’       查找时忽略字母大小写<br>   ‘is’ ‘incsearch’        查找短语时显示部分匹配<br>   ‘hls’ ‘hlsearch’        高亮显示所有的匹配短语<br>   选项名可以用完整版本，也可以用缩略版本。</p>
+</li>
+<li><p>在选项前加上 no 可以关闭选项：  :set noic</p>
+</li>
+</ol>
+<h2 id="第七讲小结"><a href="#第七讲小结" class="headerlink" title="第七讲小结"></a>第七讲小结</h2><ol>
+<li><p>输入 :help 或者按 <f1> 键或 <help> 键可以打开帮助窗口。</help></f1></p>
+</li>
+<li><p>输入 :help cmd 可以找到关于 cmd 命令的帮助。</p>
+</li>
+<li><p>输入 CTRL-W CTRL-W  可以使您在窗口之间跳转。</p>
+</li>
+<li><p>输入 :q 以关闭帮助窗口</p>
+</li>
+<li><p>您可以创建一个 vimrc 启动脚本文件用来保存您偏好的设置。</p>
+</li>
+<li><p>当输入 : 命令时，按 CTRL-D 可以查看可能的补全结果。<br>按 <tab> 可以使用一个补全。</tab></p>
+</li>
+</ol>
+<h2 id="from-V2ex"><a href="#from-V2ex" class="headerlink" title="from V2ex"></a>from V2ex</h2><p>设置显示行号(为了要了方便到某一行) <code>:set number</code><br>移动到行首(第0列) 数字键 <code>0</code><br>移动到行首(第一个非空字符)<code>Shift+6</code><br>移动到行位 <code>$</code> or <code>Shift+4</code><br>向上\下滚动半屏 <code>ctrl+u\d</code><br>向上\下滚动一屏(这个比较实用，记住) <code>ctrl+b\f</code><br>移动到第 x 行 <code>xG</code> or <code>:x</code><br>移动到当前行字符 x 上(向后搜索，继续移动到下一个 x 的命令按,键，上一个 x 的命令是按;键) <code>fx</code><br>移动到当前行字符 x 上(向前搜索，继续移动到下一个 x 的命令按,键，上一个 x 的命令是按;键) <code>Fx</code> </p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://nbma.info">Mansur</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://nbma.info/vim-tutor/">http://nbma.info/vim-tutor/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/centos/">centos</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/Centos7-deploy-zabbix3/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">CentOS7部署zabbix3.4</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/https-theory/">
+        <span class="next-text nav-default">HTTPS的工作原理</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:i@nbma.info" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://twitter.com/iam__Peter" class="iconfont icon-twitter" title="twitter"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2013 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Mansur</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://nbma.info/vim-tutor/';
+        this.page.identifier = 'vim-tutor/';
+        this.page.title = 'vim中文入门指南';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//nbma.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>
