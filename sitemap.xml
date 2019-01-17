@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://nbma.info/snmp-max-value-notify/</loc>
+    
+    <lastmod>2019-01-17T03:11:30.086Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://nbma.info/ansible-manage-router/</loc>
     
     <lastmod>2019-01-11T10:54:35.007Z</lastmod>
@@ -208,13 +215,6 @@
     <loc>http://nbma.info/switch-redundancy/</loc>
     
     <lastmod>2019-01-11T07:35:09.425Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://nbma.info/snmp-max-value-notify/</loc>
-    
-    <lastmod>2019-01-11T07:34:58.747Z</lastmod>
     
   </url>
   

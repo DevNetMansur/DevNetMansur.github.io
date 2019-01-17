@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="network, monitor, snmp, I'm Mansur" />
+  <meta name="keywords" content="monitor, network, snmp, I'm Mansur" />
 
 
 
@@ -259,15 +259,47 @@
 <p>the timetick value for system uptime (OID 1.3.6.1.2.1.1.3.0) is a 32-bit value so once the system has been up for 1 year, 132 days, 2 hours, 27 minutes and 52.96 seconds the value will roll to 0 again</p>
 </blockquote>
 <p>也就是说这个值最多记497天，之后会清零重计。</p>
-<p>解决方案就是吧<code>sysuptime</code>换成<code>snmpenginetime</code> (.1.3.6.1.6.3.10.2.1.3) ，这个值的最大值可以达到135 years</p>
+<p>解决方案就是吧<code>sysuptime</code>换成<code>snmpenginetime</code> (.1.3.6.1.6.3.10.2.1.3) ，这是一个counter64的值，最大可以达到135 years</p>
 <blockquote>
-<p>DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (61089443) 7 days, 1:41:34.43</p>
 <p>SNMP-FRAMEWORK-MIB::snmpEngineTime.0 = INTEGER: 610894 seconds</p>
 </blockquote>
-<blockquote>
-<p><pre>DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (30173291) 3 days, 11:48:52.91</pre></p>
-<p>SNMP-FRAMEWORK-MIB::snmpEngineTime.0 = INTEGER: 43251371 seconds<br>&nbsp;</p>
-</blockquote>
+<p>关于接口流量的最大值：<br>在MIB中，ifOutOctets和ifInOctets来分别表示接口流出数据量和接口流入数据量，单位是字节。其数据类型为counter32。其能表示最大值为2^32-1=4294967295。依据oid的值累加，千兆口跑满32秒就可以达到最大值。</p>
+<p>ifHCOutOctets和ifHCInOctets也是分别表示接口流出数据量和接口流入数据量其数据类型为counter64，最大值为16EB这个值的概念是如果千兆口满跑4000多年才能达到。</p>
+<p>早起设备有一个这样的建议何时使用何种计数器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;20,000,000 bits/second 使用counter32</span><br><span class="line">&lt;20,000,000 bits/s &lt; 650,000,000bits/s 使用counter32或者counter64</span><br><span class="line">&gt; 650,000,000bits/s 使用 counter64</span><br><span class="line">小于 10 Mb 接口不支持 counter64。</span><br></pre></td></tr></table></figure>
+<p>对于目前的设备，建议直接使用counter64:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">IF-MIB</th>
+<th style="text-align:left">OID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">counter32</td>
+<td style="text-align:left">ifInOctets</td>
+<td style="text-align:left">1.3.6.1.2.1.2.2.1.10</td>
+</tr>
+<tr>
+<td style="text-align:left">counter32</td>
+<td style="text-align:left">ifOutOctets</td>
+<td style="text-align:left">1.3.6.1.2.1.2.2.1.16</td>
+</tr>
+<tr>
+<td style="text-align:left">counter64</td>
+<td style="text-align:left">ifHCInOctets</td>
+<td style="text-align:left">1.3.6.1.2.1.31.1.1.1.6</td>
+</tr>
+<tr>
+<td style="text-align:left">counter64</td>
+<td style="text-align:left">ifHCOutOctets</td>
+<td style="text-align:left">1.3.6.1.2.1.31.1.1.1.10</td>
+</tr>
+</tbody>
+</table>
+<p>参考文档<br><a href="https://www.cisco.com/c/zh_cn/support/docs/ip/simple-network-management-protocol-snmp/26007-faq-snmpcounter.html" target="_blank" rel="noopener">CISCO:SNMP计数器：常见问题</a></p>
 
       
     </div>
@@ -321,9 +353,9 @@
         
           <div class="post-tags">
             
-              <a href="/tags/network/">network</a>
-            
               <a href="/tags/monitor/">monitor</a>
+            
+              <a href="/tags/network/">network</a>
             
               <a href="/tags/snmp/">snmp</a>
             
