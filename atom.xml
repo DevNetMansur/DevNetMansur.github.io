@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nbma.info/"/>
-  <updated>2019-01-11T10:54:35.007Z</updated>
+  <updated>2019-02-14T07:55:59.317Z</updated>
   <id>http://nbma.info/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>zabbix添加企业微信告警</title>
+    <link href="http://nbma.info/zabbix-wechat-alter/"/>
+    <id>http://nbma.info/zabbix-wechat-alter/</id>
+    <published>2019-02-14T07:16:52.000Z</published>
+    <updated>2019-02-14T07:55:59.317Z</updated>
+    
+    <content type="html"><![CDATA[<p>一直没做过微信告警集成到zabbix，试了下，还挺简单的，记录一下<br><a id="more"></a></p><p>首先是需要有一个企业微信，在其中创建一个自建应用</p><p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1g05zl8y3oej21240uiwh5.jpg" alt=""></p><p>设置好可见部门，记录<code>AgentId</code>和<code>Secret</code></p><p>然后再“通讯录”记下需要接受告警信息的<code>部门ID</code>，在“我的企业”-“企业信息”里记录<code>企业ID</code></p><p>本着 不重复造轮子的原则，我找了这个脚本<a href="https://github.com/X-Mars/Zabbix-Alert-WeChat" target="_blank" rel="noopener">X-Mars/Zabbix-Alert-WeChat</a><br>这个也是zabbix官方推荐的脚本。</p><p>将上面记下的四个ID填入脚本指定字段。<br>然后上传到<code>/usr/local/share/zabbix/alertscripts</code>或者 <strong>AlertScriptsPath</strong> 指定的其它位置.<br>设置好执行权限和属组</p><p>然后再zabbix web中 “管理”-“报警媒介类型”-“创建”</p><p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1g0600zxg5dj20qc0sydit.jpg" alt=""></p><p>脚本名称<code>wechat.py</code><br>添加三个参数<code>{ALERT.SENDTO}</code> <code>{ALERT.SUBJECT}</code> <code>{ALERT.MESSAGE}</code></p><p>然后是在“配置”-“动作”-“操作”中 添加触发器的触发介质，把刚才创建的报警媒介wechat加上</p><p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1g0605vr5vjj20ju0hm0vs.jpg" alt=""></p><p>最后是在“管理”-“用户”-“报警媒介”中，启用报警媒介wechat</p><p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1g0607aycjjj20xs0n279j.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一直没做过微信告警集成到zabbix，试了下，还挺简单的，记录一下&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术笔记" scheme="http://nbma.info/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="centos" scheme="http://nbma.info/tags/centos/"/>
+    
+      <category term="monitor" scheme="http://nbma.info/tags/monitor/"/>
+    
+      <category term="zabbix" scheme="http://nbma.info/tags/zabbix/"/>
+    
+  </entry>
   
   <entry>
     <title>ansible批量配置思科路由器</title>
@@ -34,9 +60,9 @@
       <category term="技术笔记" scheme="http://nbma.info/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="centos" scheme="http://nbma.info/tags/centos/"/>
-    
       <category term="network" scheme="http://nbma.info/tags/network/"/>
+    
+      <category term="centos" scheme="http://nbma.info/tags/centos/"/>
     
       <category term="ansible" scheme="http://nbma.info/tags/ansible/"/>
     
@@ -219,9 +245,9 @@
       <category term="技术笔记" scheme="http://nbma.info/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="centos" scheme="http://nbma.info/tags/centos/"/>
-    
       <category term="network" scheme="http://nbma.info/tags/network/"/>
+    
+      <category term="centos" scheme="http://nbma.info/tags/centos/"/>
     
       <category term="oxidized" scheme="http://nbma.info/tags/oxidized/"/>
     
@@ -269,9 +295,9 @@
       <category term="技术笔记" scheme="http://nbma.info/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="centos" scheme="http://nbma.info/tags/centos/"/>
-    
       <category term="network" scheme="http://nbma.info/tags/network/"/>
+    
+      <category term="centos" scheme="http://nbma.info/tags/centos/"/>
     
       <category term="oxidized" scheme="http://nbma.info/tags/oxidized/"/>
     
@@ -295,9 +321,9 @@
       <category term="技术笔记" scheme="http://nbma.info/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="monitor" scheme="http://nbma.info/tags/monitor/"/>
-    
       <category term="network" scheme="http://nbma.info/tags/network/"/>
+    
+      <category term="monitor" scheme="http://nbma.info/tags/monitor/"/>
     
       <category term="snmp" scheme="http://nbma.info/tags/snmp/"/>
     
@@ -485,30 +511,6 @@
       <category term="network" scheme="http://nbma.info/tags/network/"/>
     
       <category term="GETVPN" scheme="http://nbma.info/tags/GETVPN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ipsec&amp;pptp&amp;l2tp简单概念</title>
-    <link href="http://nbma.info/ipsec-pptp-l2tp/"/>
-    <id>http://nbma.info/ipsec-pptp-l2tp/</id>
-    <published>2018-05-09T02:19:08.000Z</published>
-    <updated>2019-01-11T07:30:07.794Z</updated>
-    
-    <content type="html"><![CDATA[<p>写的有点乱<br><a id="more"></a></p><h2 id="动态map和静态map"><a href="#动态map和静态map" class="headerlink" title="动态map和静态map"></a>动态map和静态map</h2><p>使用场景：hub固定IP，另一端没有固定IP。适用于思科和其他厂商对接。两端都是思科可以使用EZVPN<br>peer端直接普通的静态map配置<br>hub端使用动态map<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">crypto dynamic-map DY-MAP 10</span><br><span class="line"> set transform-set TRANS </span><br><span class="line">crypto map STATIC-MAP 10000 ipsec-isakmp dynamic DY-MAP</span><br></pre></td></tr></table></figure></p><h2 id="ikev2的SVTI"><a href="#ikev2的SVTI" class="headerlink" title="ikev2的SVTI"></a>ikev2的SVTI</h2><p>待补充</p><h2 id="NAT穿越问题"><a href="#NAT穿越问题" class="headerlink" title="NAT穿越问题"></a>NAT穿越问题</h2><p>ike 1-2包同时判断对方是否支持NAT-T<br>3-4包发送NAT-D 第三个包hash自己的源目IP将值发送给B，然后对端收到后用收到的源目IP进行hash，如果不一致则后续5-6等包全都启用udp4500封装。</p><h2 id="远程拨号VPN"><a href="#远程拨号VPN" class="headerlink" title="远程拨号VPN"></a>远程拨号VPN</h2><p>1，vpdn：<br>pptp, l2tp over ipsec<br>2，EzVPN<br>3，SSL VPN</p><h3 id="pptp"><a href="#pptp" class="headerlink" title="pptp"></a>pptp</h3><p>协商过程：TCP 1723<br>PPP封装内层，外层是GRE，本身并不加密<br>IPSEC只能用来加密IP流量，而PPTP还支持非IP,如IPX等<br>在ASA上需要<code>inspect pptp</code>解决穿越问题</p><h3 id="l2tp-over-ipsec"><a href="#l2tp-over-ipsec" class="headerlink" title="l2tp over ipsec"></a>l2tp over ipsec</h3><p>L2TP:UDP1701<br>PPP封装内层，外层是UDP，本身并不加密<br>配合ipsec之后在PPP之外加上esp，对esp内部加密</p><p><strong>平常不需要使用以下技术，直接使用GRE over IPSec或者SVTI直接跑动态即可</strong></p><h2 id="RRI反向路由注入"><a href="#RRI反向路由注入" class="headerlink" title="RRI反向路由注入"></a>RRI反向路由注入</h2><p>多个ipsec vpn出口前往同一个peer是用来解决路由问题。<br>根据active sa产生前往对端通讯店的静态路由 ，下一条是对端加密点IP。<br>本地设备可以通过tag配置该路由，重分布进动态路由即可。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">crypto map XXX-MAP</span><br><span class="line"> reverse route</span><br><span class="line"> reverse route tag 10</span><br></pre></td></tr></table></figure><h2 id="DPD死亡对等体检测"><a href="#DPD死亡对等体检测" class="headerlink" title="DPD死亡对等体检测"></a>DPD死亡对等体检测</h2><p>ikev1默认没有启用keepalive机制（类似路由协议hello）,所有如果对端peer down，本地无法得知，需要等待ipsec sa超时（1小时）后才发现。而DPD就是通过心跳检测对端peer是否active</p><p>两种模式periodic(周期) 和 on-demand（按需，默认）<br><strong>periodic</strong>：周期发送，占用加解密资源，检测快。5次失败之后自动清除sa</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crypto isakmp keepalive &lt;time&gt; periodic</span><br><span class="line">clear crypto ipsec sa</span><br></pre></td></tr></table></figure><p><strong>on-demand</strong>：发送加密包出去，一定时间内没有解密包回来，这时候DPD会发送询问。如果一直有加解密，或者没有任何加解密被发送，那么不会发送查询。节约资源，但是可能存在一端sa被清，一端sa还存在</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crypto isakmp keepalive &lt;time&gt;</span><br><span class="line">clear crypto ipsec sa</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;写的有点乱&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技术笔记" scheme="http://nbma.info/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="ipsec" scheme="http://nbma.info/tags/ipsec/"/>
-    
-      <category term="netowrk" scheme="http://nbma.info/tags/netowrk/"/>
     
   </entry>
   

@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="重建了很多次的blog"/>
+  <meta name="description" content="zabbix添加企业微信告警"/>
 
 
 
+
+  <meta name="keywords" content="centos, monitor, zabbix, I'm Mansur" />
 
 
 
@@ -40,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://nbma.info/archives/2013/08/"/>
+<link rel="canonical" href="http://nbma.info/zabbix-wechat-alter/"/>
 
 
 
@@ -98,11 +100,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
 </script>
 
-    <title>
-  
-    归档 - I'm Mansur
-  
-</title>
+    <title> zabbix添加企业微信告警 - I'm Mansur </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -214,59 +212,143 @@
           <div id="content" class="content">
             
   
-  
-  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          zabbix添加企业微信告警
+        
+      </h1>
 
-  <section id="archive" class="archive">
-    
-      
-        <div class="archive-title">
-          <span class="archive-post-counter">
-            目前共计 64 篇日志
+      <div class="post-meta">
+        <span class="post-time">
+          2019-02-14
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/技术笔记/">技术笔记</a>
+            
           </span>
-        </div>
-      
+        
+        
+      </div>
+    </header>
+
     
+    
+
+
+    <div class="post-content">
+      
+        <p>一直没做过微信告警集成到zabbix，试了下，还挺简单的，记录一下<br><a id="more"></a></p>
+<p>首先是需要有一个企业微信，在其中创建一个自建应用</p>
+<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1g05zl8y3oej21240uiwh5.jpg" alt=""></p>
+<p>设置好可见部门，记录<code>AgentId</code>和<code>Secret</code></p>
+<p>然后再“通讯录”记下需要接受告警信息的<code>部门ID</code>，在“我的企业”-“企业信息”里记录<code>企业ID</code></p>
+<p>本着 不重复造轮子的原则，我找了这个脚本<a href="https://github.com/X-Mars/Zabbix-Alert-WeChat" target="_blank" rel="noopener">X-Mars/Zabbix-Alert-WeChat</a><br>这个也是zabbix官方推荐的脚本。</p>
+<p>将上面记下的四个ID填入脚本指定字段。<br>然后上传到<code>/usr/local/share/zabbix/alertscripts</code>或者 <strong>AlertScriptsPath</strong> 指定的其它位置.<br>设置好执行权限和属组</p>
+<p>然后再zabbix web中 “管理”-“报警媒介类型”-“创建”</p>
+<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1g0600zxg5dj20qc0sydit.jpg" alt=""></p>
+<p>脚本名称<code>wechat.py</code><br>添加三个参数<code>{ALERT.SENDTO}</code> <code>{ALERT.SUBJECT}</code> <code>{ALERT.MESSAGE}</code></p>
+<p>然后是在“配置”-“动作”-“操作”中 添加触发器的触发介质，把刚才创建的报警媒介wechat加上</p>
+<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1g0605vr5vjj20ju0hm0vs.jpg" alt=""></p>
+<p>最后是在“管理”-“用户”-“报警媒介”中，启用报警媒介wechat</p>
+<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1g0607aycjjj20xs0n279j.jpg" alt=""></p>
+
+      
+    </div>
 
     
       
-        
-        
+      
 
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://nbma.info">Mansur</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://nbma.info/zabbix-wechat-alter/">http://nbma.info/zabbix-wechat-alter/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
         
-          
-          <div class="collection-title">
-            <h2 class="archive-year">2013</h2>
+          <div class="post-tags">
+            
+              <a href="/tags/centos/">centos</a>
+            
+              <a href="/tags/monitor/">monitor</a>
+            
+              <a href="/tags/zabbix/">zabbix</a>
+            
           </div>
         
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            08-01
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/centos-dns-unresolution/" class="archive-post-link">
-            CentOS系统DNS不能解析问题
-          </a>
-        </span>
-      </div>
+        
+        
+  <nav class="post-nav">
     
-  </section>
-
-  
-  <nav class="pagination">
     
+      <a class="next" href="/ansible-manage-router/">
+        <span class="next-text nav-default">ansible批量配置思科路由器</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
       </main>
@@ -350,6 +432,27 @@
     </div>
 
     
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://nbma.info/zabbix-wechat-alter/';
+        this.page.identifier = 'zabbix-wechat-alter/';
+        this.page.title = 'zabbix添加企业微信告警';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//nbma.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
 
 
     
