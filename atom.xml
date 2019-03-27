@@ -69,26 +69,6 @@
   </entry>
   
   <entry>
-    <title>2018的最后一天</title>
-    <link href="http://nbma.info/last-day-of-2018/"/>
-    <id>http://nbma.info/last-day-of-2018/</id>
-    <published>2018-12-31T12:53:50.000Z</published>
-    <updated>2019-01-11T08:09:20.208Z</updated>
-    
-    <content type="html"><![CDATA[<p>过的真快，公司门口的圣诞树又立起来了，转眼间入职满一年，2018年也就这么过完了。<br><a id="more"></a></p><p>最后一天，想法有点多：<br>上午睡了个懒觉，起床前心血来潮，找了中央人民广播电台的Music Radio音乐之声，果然，还是熟悉的味道；小时候就经常在家听，也算是从小听到大了，中间应该遗忘了好些年吧。今天听了一天，还跟主播互动了一把。<br>下午睡一了觉，睡前临时决定下午睡醒之后可以去跑个步，然后再附近公园跑完6公里，2018的最后一跑。<br>从公园回来的路上，纠结着吃啥，最后决定去挑战一个人吃火锅，哈哈，新成就get√<br>晚上回来开电脑，缕缕过去这365天。</p><h2 id="记忆"><a href="#记忆" class="headerlink" title="记忆"></a>记忆</h2><p>前几天，跟棒冰同学聊天的时候谈到小时候的记忆，认真回忆了下自己的小时候。这次发现好像10岁以前的记忆里只剩下零碎的几个画面，甚至都不记得一个完整的故事。</p><p>最早的一个画面的是5，6岁的时候，也就是20年前，爸爸拿录像机拍下的一个画面：身高不到1米的我站在小院里对着录像机傻笑。再往后学前班和小学那段时间几乎已经记不起来什么了，似乎也是因为那时候只知道学习，完全没有经历过能让自己留下深刻印象的事情，也没有做过从小到大都觉得有意义的事情。想到这里的时候，突然有一点点惶恐，会不会20年后的我也会像现在这样，对现在的经历已经没有任何印象。</p><p>从离开学校到现在，除了第一次找工作是在4月份，之后每次工作变动的时间都很尴尬，第一次是从宁夏来北京，12月份找工作；第二次是公司“跑路”，也是12月份找工作；第三次是因为自己考证时间在下半年，也是12月份。现在这个公司，12月份的裁员名单没安排上，终于可以摆脱这个魔咒了。</p><p>平静下心情，呼~~</p><p>高中玩QQ空间的时候看到了别人发的一个日志，《2007年的最后一天》，还挺有意思，感觉有种神奇的仪式感，原文还存在我的QQ空间里。后来的几年我也开始慢慢的写一份自己的年终总结，哪怕只是记录我最后一天的心情，或者是流水账，现在回头去看起来也都是有意义的，可惜就是中间漏了几年 : ( </p><h2 id="FLAG"><a href="#FLAG" class="headerlink" title="FLAG"></a>FLAG</h2><p>来吧，先看看去年立的flag。</p><p>17年12月因为租在崇文门的房子到期，我搬去跟我哥我嫂子住，再加上年底换到新公司，最后几天就忙着适应生活和工作的新环境的了。所以17年的年度总结被我成功的拖到了2018才写，flag也是相对粗糙。当时前一份工作在运维团队干的也是顺风顺水，再加上完成了高级认证，就变得自满了。等换工作面试的时候，被各种吊打，连基本的ospf都答不上来，也暴露了自己没学过CCNP的事实。所以当时唯一一个很粗糙的flag就是给自己打基础，重新把网络的基本功好好学一遍。</p><p><a href="/2018-target/">&lt;2018目标&gt;</a></p><p>量化的看，今年完成了其中的70%的flag，并且大部分已经整理笔记发到这里。不过对于无线、传输、光、Ansible这四部分还没有掌握，这四部分需要一些经验，准备在春节前加把劲，再整理下基础理论部分。<br>另外的二层三层的内容都重新复习了；VPN部分以前没接触过的也通过视频和模拟实验学习完毕；监控是我擅长的，这部分还可以做的更好；QoS也终于弄明白了。DC部分，我想这应该是今年最大的收获，虽然还没有整理笔记，但是总算在大师的带领下建立了对整个DC方向知识体系的建立，之后的学习就可以有的放矢！</p><h2 id="流水账"><a href="#流水账" class="headerlink" title="流水账"></a>流水账</h2><p>Flag之后改说说今年自己的<del>感悟</del><strong>流水账</strong>了。<br>上半年都在我哥那借住，一直过得很赶，早晨起来就是吃饭出门，晚上下班也只能坐在客厅玩手机，感觉无所适从，又很焦虑，也没有自己思考的时间。终于在8月份搬出来自己住，说起来竟然是从小到大第一次完全独立的生活，很庆幸，没有放松堕落。虽然还是没想明白自己到底想要的是什么，但是至少明白了不能虚度当下的每一天。</p><p>另一个感慨是，今年真的意识到了健康的重要性，以及，自己的身体也没有想象中的很健康。一直以来，得益于高三复读那年一整年的运动，我过去近十年的体重都没有明显的变化，虽然之后疏于运动，但是我始终以为自己很健康。体检完之后当时就慌了……可能有脂肪肝，我艹。等拿到体检结果，除了脂肪肝还有血液异常，瞬间想了很多，差点崩溃。还好最后发现是虚惊一场。。。<br>除了自己的经历，这一年，身边比我还小的人确诊癌症，还有多起大大小小的公司里同行“猝死”，除了唏嘘和惋惜，也越来越觉得在一线城市这样高压的环境里，任何工作都成了“高危”工作。所以，2019年给自己定的基调就是——养生！</p><p>9月在自己租的房子附近发现了一个适合跑步的路线，然后也从那时候开始运动，三个月跑了100多公里。希望新的一年能继续坚持吧，不求练肌肉，只求健康。keep running!</p><p>自己看小说是从初中就开始的，绝大多数时间都在看各类网络小说，甚至还有一段沉迷的时间。消沉的久了就觉得浪费了太多时间，但是一个人无聊的时候又找不到其他事情做。所以最近这一年已经在努力的摆脱和远离这些东西。让自己忙起来，还有读一些有价值的文字；之前没什么印象了，从16年的时候读了一本书，《大秦帝国》断断续续的读了一年，发现自己还是挺喜欢的历史的。所以今年找了一本徐中约的《中国近代史》，想着自己看了2000千多年前的封建王朝的形成，再看看封建王朝的瓦解。这两本书都很棒，《大秦帝国》是小说体，情节安排比较到位，任务刻画也很棒，看完我又想重温一遍小时候玩过的《秦殇》；徐中约的《中国近代史》从另一个非当前历史课本的角度讲述了第一次鸦片战争到公元2000年前的史事，也算是解开了我对近代史的不少疑惑。读书以来最大的收获莫过于此。<br>7月，应该是7月份的时候吧，有一天下雨，去了国家图书馆，这算是第二次去了，第一次没带身份证，没进去里面书库。这次进去全面的逛了逛，没有想象中的大，北馆的存书量估计也就跟大学图书馆差不多。在四楼一个小展位的角落里找了一本书十几年前的书《历史学是什么》，不得不感叹历史学是一个发展十分缓慢的学科，作者的功力也很深，一本书概括了研究历史学的方法论。</p><p>今年读的另外几本书是《从0到1》《腾讯传》《追风筝的人》《凡人修仙传》。<br>《追风筝的人》在读的过程中一度中断几个月，诶……#metoo能站出来的人都是勇士！。</p><p>今年还拍了不少好看的照片，都是风景照。新的一年，希望能慢慢解毒人像拍摄吧。</p><p>还有，分手了。</p><h2 id="新flag"><a href="#新flag" class="headerlink" title="新flag"></a>新flag</h2><ul><li><p>工作</p><ul><li>ansible更进一步，一定要掌握的</li><li>k8s的网络需要研究下</li><li>python写一个小系统</li><li>换工作之后做一份清晰的职业规划</li></ul></li><li><p>书单</p><ul><li>《全球通史》</li><li>《小王子》英文版</li><li>《男人来自火星，女人来自地球》</li><li>《如何阅读一本书》</li><li>《人类简史》</li></ul></li><li><p>养生</p><ul><li>累计500公里跑步</li><li>消灭脂肪肝</li><li>每周至少健身房三次</li></ul></li><li><p>其他</p><ul><li>能坚持写点东西</li><li>多认识一些朋友</li><li>学好英语</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;过的真快，公司门口的圣诞树又立起来了，转眼间入职满一年，2018年也就这么过完了。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="生活随想" scheme="http://nbma.info/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E6%83%B3/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>收集来的一些公司的IP范围</title>
     <link href="http://nbma.info/ip-range-of-some-corp/"/>
     <id>http://nbma.info/ip-range-of-some-corp/</id>
@@ -107,26 +87,6 @@
     
     
       <category term="ip" scheme="http://nbma.info/tags/ip/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最近看到的一些很有道理的话</title>
-    <link href="http://nbma.info/some-words-for-life/"/>
-    <id>http://nbma.info/some-words-for-life/</id>
-    <published>2018-12-27T03:46:22.000Z</published>
-    <updated>2019-01-11T07:50:16.770Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近看了一些很有道理的话，我发现有时候需要这话才能点醒自己<br><a id="more"></a></p><p>三年过后，你会发现<br>除了给自己最好的体质<br>你买的其他东西都贬值了</p><p>十年以后，你会发现<br>除了给自己最好的体质，坚韧的性格<br>你买的其他东西不知道扔哪了</p><p>二十年后，你会发现<br>你给自己最好的体质，坚韧的性格<br>成全了一个熠熠生辉的生命！<br>当那些奢侈品被称作“旧衣服”<br>那些高端产品被称作“过时货”<br>你会发现，给自己最好的体质才是永不过时的奢侈品。</p><p>只有1/2的人知道差距在哪，这其中又只有1/2的人会付诸行动，这其中又只有1/2的人会坚持下去，所以最后成功的只有1/8。如果看到比自己牛逼的经历，就想当然认为是在吹牛逼，那么其实已经是连差距都不愿意正视的人</p><p>1、我们的社会主流婚姻观，不能说畸形，但至少还没有成熟。</p><p>婚姻，不是目的，而是结果。但太多的人把婚姻当目的，甚至是传宗接代的手段。</p><p>婚姻，是以：经历唯一且需要无限度妥协和包容的亲密关系，追求身心合一，共同陪伴、成长、经历的二人互动关系，为目的的结果。如果婚姻成了目的，为了结婚而结婚，为了所谓的人生阶段而结婚，那么这个婚姻很可能是有风险的。</p><p>2、别被社会“主流”价值观裹挟。</p><p>大家都是第一次做人，凭什么我要听所谓的“过来人”经验指指点点？</p><p>我母亲从不催我结婚，尊重我的一切思考和选择。我母亲是高校教授，退休之后，一人、一包、一相机，几乎走遍中国所有省市，但我父亲就很老派，对于我离家定居北京，以及现在还单身不考虑要孩子的事非常不满。</p><p>但我不在乎，因为我可以掌控我自己的人生。我再重复一次，强大的人才可以选择自己想要的东西，才拥有自有（说“不”的权力），弱小的人没有资格谈爱和梦想，当然也只能被所谓的社会主流价值观裹挟。</p><p>3、在爱情的世界里，从来没有先来后到，只有弱肉强食，但婚姻恰恰相反，所以婚姻的本质，其实是反人性和违背进化论的。</p><p>4、如果荷尔蒙遇到婚姻，怎么办？我认为有两个原则：其一，怂；其二，不以伤害其他人为前提。</p><p>怂，从心也，跟从自己的内心，还是那句话，大家都是第一次做人，不要被一些所谓的普世价值观裹挟，人不是为结果而活，因为结果就是个嗝屁。另外就是人之所以为人，就是要有基本的善念，如果举动会有很大的风险对其他人、家庭、事业或者其他，造成伤害和冲击，那就要三思而后行，尤其是自己风险控制能力不强的时候。</p><p>其实性格这件事，哪有优点缺点之分，只是特点，无非是一个硬币的两个面而已。</p><p>举例说，不求上进往往心态平和，孜孜进取往往难以悦纳，兴趣广泛往往博而不精，聚焦专注往往木讷无趣。目标明确其实也是目的性强，善于创新其实也是不守规则，简单直接其实也是五大三粗，犀利敏锐其实也是偏激较真。</p><p>很多时候，改掉自己的性格缺点，其实同时也埋葬掉了自己的性格优点，因为这本就是硬币的两面。像本人，既然有消极被动和没有魄力的缺点，自然就有擅于换位思考和细腻敏感的优点。所以我一直觉得，性格缺点根本不必改，需要做的，其实是认清和悦纳自己的性格特点，一方面发掘其中的优势部分，另一方面则是掩藏和避开其中的劣势部分。</p><p>要获得职业发展和财富积累的超常规提升，在没有原生家庭的加持之下，需要至少两个条件，一是时势，俗称运气和风口，二是努力，俗称永远做好准备。</p><p>我把运气排在努力之前，是因为相比起运气的眷顾，努力太容易实现了，虽然对于大多数人来说，其努力和坚持的程度还远远不够。难的是运气，也就是所谓的时势造英雄，05年来到北京一无所有的北漂们，很多都已经2-3套房子，操心着买哪只股票选哪个私募这种中产阶层才会操心的事情，但是15年来的这些年轻人们，十年之后有多大比例能跃迁至中产呢，个人觉得其难度不可同日而语。</p><p>爱迪生有一句话被广为传播，“天才是99%的汗水加上1%的灵感”，但是这句话还有后半句，“但那1%的灵感是最重要的,甚至比那99%的汗水都要重要”。时势和运气之于我们职场和财富，也是如此，因为这些和幸福感完全不同，只和强度有关，和频率无关。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近看了一些很有道理的话，我发现有时候需要这话才能点醒自己&lt;br&gt;
-    
-    </summary>
-    
-      <category term="收藏分享" scheme="http://nbma.info/categories/%E6%94%B6%E8%97%8F%E5%88%86%E4%BA%AB/"/>
-    
     
   </entry>
   
@@ -511,6 +471,56 @@
       <category term="network" scheme="http://nbma.info/tags/network/"/>
     
       <category term="GETVPN" scheme="http://nbma.info/tags/GETVPN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ipsec&amp;pptp&amp;l2tp简单概念</title>
+    <link href="http://nbma.info/ipsec-pptp-l2tp/"/>
+    <id>http://nbma.info/ipsec-pptp-l2tp/</id>
+    <published>2018-05-09T02:19:08.000Z</published>
+    <updated>2019-01-11T07:30:07.794Z</updated>
+    
+    <content type="html"><![CDATA[<p>写的有点乱<br><a id="more"></a></p><h2 id="动态map和静态map"><a href="#动态map和静态map" class="headerlink" title="动态map和静态map"></a>动态map和静态map</h2><p>使用场景：hub固定IP，另一端没有固定IP。适用于思科和其他厂商对接。两端都是思科可以使用EZVPN<br>peer端直接普通的静态map配置<br>hub端使用动态map<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">crypto dynamic-map DY-MAP 10</span><br><span class="line"> set transform-set TRANS </span><br><span class="line">crypto map STATIC-MAP 10000 ipsec-isakmp dynamic DY-MAP</span><br></pre></td></tr></table></figure></p><h2 id="ikev2的SVTI"><a href="#ikev2的SVTI" class="headerlink" title="ikev2的SVTI"></a>ikev2的SVTI</h2><p>待补充</p><h2 id="NAT穿越问题"><a href="#NAT穿越问题" class="headerlink" title="NAT穿越问题"></a>NAT穿越问题</h2><p>ike 1-2包同时判断对方是否支持NAT-T<br>3-4包发送NAT-D 第三个包hash自己的源目IP将值发送给B，然后对端收到后用收到的源目IP进行hash，如果不一致则后续5-6等包全都启用udp4500封装。</p><h2 id="远程拨号VPN"><a href="#远程拨号VPN" class="headerlink" title="远程拨号VPN"></a>远程拨号VPN</h2><p>1，vpdn：<br>pptp, l2tp over ipsec<br>2，EzVPN<br>3，SSL VPN</p><h3 id="pptp"><a href="#pptp" class="headerlink" title="pptp"></a>pptp</h3><p>协商过程：TCP 1723<br>PPP封装内层，外层是GRE，本身并不加密<br>IPSEC只能用来加密IP流量，而PPTP还支持非IP,如IPX等<br>在ASA上需要<code>inspect pptp</code>解决穿越问题</p><h3 id="l2tp-over-ipsec"><a href="#l2tp-over-ipsec" class="headerlink" title="l2tp over ipsec"></a>l2tp over ipsec</h3><p>L2TP:UDP1701<br>PPP封装内层，外层是UDP，本身并不加密<br>配合ipsec之后在PPP之外加上esp，对esp内部加密</p><p><strong>平常不需要使用以下技术，直接使用GRE over IPSec或者SVTI直接跑动态即可</strong></p><h2 id="RRI反向路由注入"><a href="#RRI反向路由注入" class="headerlink" title="RRI反向路由注入"></a>RRI反向路由注入</h2><p>多个ipsec vpn出口前往同一个peer是用来解决路由问题。<br>根据active sa产生前往对端通讯店的静态路由 ，下一条是对端加密点IP。<br>本地设备可以通过tag配置该路由，重分布进动态路由即可。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">crypto map XXX-MAP</span><br><span class="line"> reverse route</span><br><span class="line"> reverse route tag 10</span><br></pre></td></tr></table></figure><h2 id="DPD死亡对等体检测"><a href="#DPD死亡对等体检测" class="headerlink" title="DPD死亡对等体检测"></a>DPD死亡对等体检测</h2><p>ikev1默认没有启用keepalive机制（类似路由协议hello）,所有如果对端peer down，本地无法得知，需要等待ipsec sa超时（1小时）后才发现。而DPD就是通过心跳检测对端peer是否active</p><p>两种模式periodic(周期) 和 on-demand（按需，默认）<br><strong>periodic</strong>：周期发送，占用加解密资源，检测快。5次失败之后自动清除sa</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crypto isakmp keepalive &lt;time&gt; periodic</span><br><span class="line">clear crypto ipsec sa</span><br></pre></td></tr></table></figure><p><strong>on-demand</strong>：发送加密包出去，一定时间内没有解密包回来，这时候DPD会发送询问。如果一直有加解密，或者没有任何加解密被发送，那么不会发送查询。节约资源，但是可能存在一端sa被清，一端sa还存在</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crypto isakmp keepalive &lt;time&gt;</span><br><span class="line">clear crypto ipsec sa</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写的有点乱&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术笔记" scheme="http://nbma.info/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ipsec" scheme="http://nbma.info/tags/ipsec/"/>
+    
+      <category term="netowrk" scheme="http://nbma.info/tags/netowrk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用ikev2配置IPSecVPN(思科IOS/ASA)</title>
+    <link href="http://nbma.info/ipsec-ikev2-config/"/>
+    <id>http://nbma.info/ipsec-ikev2-config/</id>
+    <published>2018-05-02T10:55:16.000Z</published>
+    <updated>2019-01-11T07:29:53.379Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ww1.sinaimg.cn/large/68e0aeafly1fqlbwebtrgj20mq04tt93.jpg" alt=""><br><a id="more"></a></p><h2 id="IOS配置"><a href="#IOS配置" class="headerlink" title="IOS配置"></a>IOS配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">crypto ikev2 proposal IKE_PROP </span><br><span class="line"> encryption 3des aes-cbc-256</span><br><span class="line"> integrity sha256 sha512</span><br><span class="line"> group 2 5 14</span><br><span class="line"> prf sha256 sha(对随机数加密之后得到新的‘随机值’)</span><br><span class="line"></span><br><span class="line">crypto ikev2 policy IKE_PROL </span><br><span class="line"> proposal IKE_PROP</span><br><span class="line"></span><br><span class="line">crypto ikev2 keyring IKE_KEY</span><br><span class="line"> peer PEER_B</span><br><span class="line">  address 23.1.1.3</span><br><span class="line">  pre-shared-key IPSECKEY</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">crypto ikev2 profile IKE_PROF</span><br><span class="line"> match identity remote address 23.1.1.3 255.255.255.255 </span><br><span class="line"> identity local address 12.1.1.1</span><br><span class="line"> authentication local pre-share</span><br><span class="line"> authentication remote pre-share</span><br><span class="line"> keyring local IKE_KEY</span><br><span class="line"></span><br><span class="line">crypto ipsec transform-set TRANS1 esp-des esp-md5-hmac </span><br><span class="line"> mode tunnel</span><br><span class="line">crypto ipsec transform-set TRANS2 esp-3des esp-sha256-hmac </span><br><span class="line"> mode tunnel</span><br><span class="line"></span><br><span class="line">ip access-list extended VPN</span><br><span class="line"> permit ip 14.1.1.0 0.0.0.255 35.1.1.0 0.0.0.255</span><br><span class="line"></span><br><span class="line">crypto map IKE_MAP 10 ipsec-isakmp </span><br><span class="line"> set peer 23.1.1.3</span><br><span class="line"> set transform-set TRANS1 TRANS2 </span><br><span class="line"> set ikev2-profile IKE_PROF</span><br><span class="line"> match address VPN</span><br><span class="line"></span><br><span class="line">interface e0/0</span><br><span class="line"> crypto map IKE_MAP</span><br></pre></td></tr></table></figure><h2 id="ASA配置"><a href="#ASA配置" class="headerlink" title="ASA配置"></a>ASA配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">crypto ikev2 enable outside</span><br><span class="line"></span><br><span class="line">crypto ikev2 policy 10</span><br><span class="line"> encryption aes-256 3des</span><br><span class="line"> integrity sha512 sha256</span><br><span class="line"> group 5 2 1</span><br><span class="line"> prf sha256 sha</span><br><span class="line"> lifetime seconds 86400</span><br><span class="line"></span><br><span class="line">tunnel-group 12.1.1.1 type ipsec-l2l</span><br><span class="line">tunnel-group 12.1.1.1 ipsec-attributes</span><br><span class="line"> ikev2 remote-authentication pre-shared-key IPSECKEY</span><br><span class="line"> ikev2 local-authentication pre-shared-key IPSECKEY</span><br><span class="line"></span><br><span class="line">crypto ipsec ikev2 ipsec-proposal TRANS</span><br><span class="line"> protocol esp encryption aes-192 des</span><br><span class="line"> protocol esp integrity sha-1 md5</span><br><span class="line"></span><br><span class="line">access-list VPN extended permit ip 35.1.1.0 255.255.255.0 14.1.1.0 255.255.255.0 </span><br><span class="line"></span><br><span class="line">crypto map IKE_VPN 10 match address VPN</span><br><span class="line">crypto map IKE_VPN 10 set peer 12.1.1.1 </span><br><span class="line">crypto map IKE_VPN 10 set ikev2 ipsec-proposal TRANS</span><br><span class="line">crypto map IKE_VPN interface outside</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://ww1.sinaimg.cn/large/68e0aeafly1fqlbwebtrgj20mq04tt93.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术笔记" scheme="http://nbma.info/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="network" scheme="http://nbma.info/tags/network/"/>
+    
+      <category term="asa" scheme="http://nbma.info/tags/asa/"/>
+    
+      <category term="ipsec" scheme="http://nbma.info/tags/ipsec/"/>
     
   </entry>
   
