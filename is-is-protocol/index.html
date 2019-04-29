@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+  <head><meta name="generator" content="Hexo 3.8.0">
     
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
-<meta name="theme-color" content="#f8f5ec" />
+<meta name="theme-color" content="#f8f5ec">
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-
-  <meta name="description" content="IS-IS路由协议"/>
-
+<meta name="referrer" content="no-referrer">
 
 
 
-  <meta name="keywords" content="network, I'm Mansur" />
+  <meta name="description" content="IS-IS路由协议">
+
+
+
+
+  <meta name="keywords" content="network, I'm Mansur">
 
 
 
@@ -38,24 +41,24 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
 
 
 
-<link rel="canonical" href="http://nbma.info/is-is-protocol/"/>
+<link rel="canonical" href="http://nbma.info/is-is-protocol/">
 
 
 
-  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
 
 
 
 
-  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" />
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
 
 
 
@@ -121,7 +124,7 @@
         <li class="mobile-menu-item">
           
           
-            Home
+            首页
           
         </li>
       </a>
@@ -130,7 +133,7 @@
         <li class="mobile-menu-item">
           
           
-            Archives
+            归档
           
         </li>
       </a>
@@ -139,7 +142,7 @@
         <li class="mobile-menu-item">
           
           
-            Tags
+            标签
           
         </li>
       </a>
@@ -148,7 +151,7 @@
         <li class="mobile-menu-item">
           
           
-            About
+            关于
           
         </li>
       </a>
@@ -169,7 +172,7 @@
           <a class="menu-item-link" href="/">
             
             
-              Home
+              首页
             
           </a>
         </li>
@@ -178,7 +181,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              Archives
+              归档
             
           </a>
         </li>
@@ -187,7 +190,7 @@
           <a class="menu-item-link" href="/tags">
             
             
-              Tags
+              标签
             
           </a>
         </li>
@@ -196,7 +199,7 @@
           <a class="menu-item-link" href="/about">
             
             
-              About
+              关于
             
           </a>
         </li>
@@ -238,7 +241,7 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
+    <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#IS-IS的角色"><span class="toc-text">IS-IS的角色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IS-IS的NET地址结构"><span class="toc-text">IS-IS的NET地址结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IS-IS的metric"><span class="toc-text">IS-IS的metric</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IS-IS的配置示例"><span class="toc-text">IS-IS的配置示例</span></a></li></ol>
     </div>
@@ -267,18 +270,18 @@
 </ul>
 <h2 id="IS-IS的NET地址结构"><a href="#IS-IS的NET地址结构" class="headerlink" title="IS-IS的NET地址结构"></a>IS-IS的NET地址结构</h2><p>网络服务访问点NSAP（Network Service Access Point）是OSI协议中用于定位资源的地址。NSAP的地址结构如下图所示，它由IDP（Initial Domain Part）和DSP（Domain Specific Part）组成。IDP和DSP的长度都是可变的，NSAP总长最多是20个字节，最少8个字节。</p>
 <p>在IS-IS路由选择过程中，没有使用NSAP地址中的NSEL，所以NSEL始终保持为00。当NSEL为00时，我们就称这个NSAP地址为NET（Network Entity Titile，网络实体名）地址，NET地址用来唯一地表示IS-IS路由选择域中的OSI主机。路由器使用NET地址来标识自己。<br>路由器在发送的链路状态数据包（LSP）中用NET来标识自己，这类似于OSPF发送的LSA中的路由器ID（Router ID）。</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxnssxkpxlj20e603haac.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxnssxkpxlj20e603haac.jpg" alt></p>
 <p>具体字段就不解析了，其中的区域ID是可变长的，建议是用49开通的本地私有域；system ID建议全局唯一，NSEL在ip网络中没有使用，填0就行。</p>
 <p>例子 1：net 49.0001.0000.0000.0001.00<br>代表 area = 49.0001; systemID = 0000.0000.0001; NSEL = 00.</p>
 <p>例子 2：net ab.cdef.1234.5678.90ab.cdef.00<br>代表 area = ab.cdef.1234; systemID = 5678.90ab.cdef; NESL = 00.</p>
 <h2 id="IS-IS的metric"><a href="#IS-IS的metric" class="headerlink" title="IS-IS的metric"></a>IS-IS的metric</h2><p>在思科路由器中，ISIS默认只使用default-metric 10来计算度量值，可以使用命令metric-style来引入Delay延时，Expense花销和Reliabilty可靠性来计算路由参考。<br>也可以直接在接口下修改metric值来影响选路</p>
 <h2 id="IS-IS的配置示例"><a href="#IS-IS的配置示例" class="headerlink" title="IS-IS的配置示例"></a>IS-IS的配置示例</h2><p>这里用不同图标来表示不同角色的设备（R3,R5是level-2设备）</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxo0c72b1hj21aq0oyti7.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxo0c72b1hj21aq0oyti7.jpg" alt></p>
 <p>基本配置</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">router isis</span><br><span class="line"> net <span class="number">49.0001</span><span class="number">.0000</span><span class="number">.0000</span><span class="number">.0001</span><span class="number">.00</span>   <span class="comment">#net</span></span><br><span class="line"> is-type level-<span class="number">1</span></span><br><span class="line"></span><br><span class="line">interface Ethernet0/<span class="number">0</span></span><br><span class="line"> ip address <span class="number">16.1</span><span class="number">.1</span><span class="number">.1</span> <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span></span><br><span class="line"> ip router isis  <span class="comment">#接口下启用isis</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#接口下修改metric</span></span><br><span class="line">isis metric XXX &#123;level-<span class="number">1</span>/level-<span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
 <p>常用的命令：</p>
-<p>show isis topology #查看到达本区域的每个NET的metric和下一跳<br><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxo09gtbc3j211w0m8aeg.jpg" alt=""></p>
-<p>show isis nei #查看邻居状态和角色类型<br><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxo08ew88uj2142090myt.jpg" alt=""></p>
+<p>show isis topology #查看到达本区域的每个NET的metric和下一跳<br><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxo09gtbc3j211w0m8aeg.jpg" alt></p>
+<p>show isis nei #查看邻居状态和角色类型<br><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxo08ew88uj2142090myt.jpg" alt></p>
 <p>参考文档：<br>[1]. <a href="http://www.net130.com/ccnp/tech/ISISbj%20.pdf" target="_blank" rel="noopener">IS-IS路由协议中文教程v1</a><br>[2]. <a href="https://cshihong.github.io/2018/01/08/ISIS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" target="_blank" rel="noopener">ISIS基础知识</a><br>[3]. <a href="http://blog.51cto.com/xuanbo/201504" target="_blank" rel="noopener">IS-IS路由协议（一）</a></p>
 
       
@@ -290,15 +293,15 @@
 
   <div class="post-copyright">
     <p class="copyright-item">
-      <span>Author: </span>
+      <span>原文作者: </span>
       <a href="http://nbma.info">Mansur</a>
     </p>
     <p class="copyright-item">
-      <span>Link: </span>
+      <span>原文链接: </span>
       <a href="http://nbma.info/is-is-protocol/">http://nbma.info/is-is-protocol/</a>
     </p>
     <p class="copyright-item">
-      <span>License: </span>
+      <span>许可协议: </span>
       
       <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
@@ -309,8 +312,8 @@
       
       
   <div class="post-reward">
-    <input type="checkbox" name="reward" id="reward" hidden />
-    <label class="reward-button" for="reward">Reward</label>
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
     <div class="qr-code">
       
       
@@ -344,13 +347,13 @@
       <a class="prev" href="/qos-base/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">QoS学习笔记</span>
-        <span class="prev-text nav-mobile">Prev</span>
+        <span class="prev-text nav-mobile">上一篇</span>
       </a>
     
     
       <a class="next" href="/is-ospf-a-pure-link-status-protocol/">
         <span class="next-text nav-default">验证OSPF是不是一个纯链路状态协议</span>
-        <span class="prev-text nav-mobile">Next</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -428,11 +431,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 

@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+  <head><meta name="generator" content="Hexo 3.8.0">
     
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
-<meta name="theme-color" content="#f8f5ec" />
+<meta name="theme-color" content="#f8f5ec">
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-
-  <meta name="description" content="elk收集分析ASA日志"/>
-
+<meta name="referrer" content="no-referrer">
 
 
 
-  <meta name="keywords" content="centos, monitor, asa, SSLVPN, elk, I'm Mansur" />
+  <meta name="description" content="elk收集分析ASA日志">
+
+
+
+
+  <meta name="keywords" content="centos, asa, SSLVPN, monitor, elk, I'm Mansur">
 
 
 
@@ -38,24 +41,24 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
 
 
 
-<link rel="canonical" href="http://nbma.info/elk-conf/"/>
+<link rel="canonical" href="http://nbma.info/elk-conf/">
 
 
 
-  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
 
 
 
 
-  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" />
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
 
 
 
@@ -121,7 +124,7 @@
         <li class="mobile-menu-item">
           
           
-            Home
+            首页
           
         </li>
       </a>
@@ -130,7 +133,7 @@
         <li class="mobile-menu-item">
           
           
-            Archives
+            归档
           
         </li>
       </a>
@@ -139,7 +142,7 @@
         <li class="mobile-menu-item">
           
           
-            Tags
+            标签
           
         </li>
       </a>
@@ -148,7 +151,7 @@
         <li class="mobile-menu-item">
           
           
-            About
+            关于
           
         </li>
       </a>
@@ -169,7 +172,7 @@
           <a class="menu-item-link" href="/">
             
             
-              Home
+              首页
             
           </a>
         </li>
@@ -178,7 +181,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              Archives
+              归档
             
           </a>
         </li>
@@ -187,7 +190,7 @@
           <a class="menu-item-link" href="/tags">
             
             
-              Tags
+              标签
             
           </a>
         </li>
@@ -196,7 +199,7 @@
           <a class="menu-item-link" href="/about">
             
             
-              About
+              关于
             
           </a>
         </li>
@@ -238,7 +241,7 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
+    <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ASA的syslog配置"><span class="toc-text">ASA的syslog配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#logstash的配置"><span class="toc-text">logstash的配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#input：定义数据源"><span class="toc-text">input：定义数据源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filter：解析数据格式"><span class="toc-text">filter：解析数据格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Grok"><span class="toc-text">Grok</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#syslog-pri"><span class="toc-text">syslog_pri</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mutate"><span class="toc-text">mutate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GeoIP"><span class="toc-text">GeoIP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Date"><span class="toc-text">* Date</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output：输出"><span class="toc-text">output：输出</span></a></li></ol></li></ol>
     </div>
@@ -308,7 +311,7 @@
 <p>更多ASA LOG message对应信息请查询<a href="https://www.cisco.com/c/en/us/td/docs/security/asa/syslog/b_syslog.html" target="_blank" rel="noopener">思科官网文档</a></p>
 </blockquote>
 <p>除了list以外，logging trap也可以根据不用的日志等级来过滤发送，常用的是<code>logging trap informational</code></p>
-<p>各个等级的大致描述如下<br><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fuzyj5vciaj20rs0l9jtp.jpg" alt=""></p>
+<p>各个等级的大致描述如下<br><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fuzyj5vciaj20rs0l9jtp.jpg" alt></p>
 <p>此外，还有一条logging facility 22<br>facility用于区分不同类型的设备或进程产生的syslog，思科建议设置为21，22或23<br>这个值用于计算syslog的优先级，Priority = Facility * 8 + Level</p>
 <hr>
 <h2 id="logstash的配置"><a href="#logstash的配置" class="headerlink" title="logstash的配置"></a>logstash的配置</h2><p>logstash的配置文件包括三个部分：<code>input</code>, <code>filter</code>, <code>output</code>.<br>详解如下：</p>
@@ -340,7 +343,7 @@
 <p>这里主要对113039中的remote-ip进行解析。logstash内置的表达式中没有对ASA-6-113039日志的匹配。</p>
 <p>一条ASA-6-113039的日志经过上面的grok解析之后，<code>cisco_message</code>内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Group &lt;ssl-policy&gt; User &lt;xiaoming&gt; IP &lt;116.87.87.164&gt; AnyConnect parent session started.</span><br></pre></td></tr></table></figure></p>
 <p>分别是用户所在安全组，用户名，用户拨入VPN时的源IP地址，使用正则表达式提取到这三部分内容。<br>这里推荐使用kibana内置的dev tools调试表达式，直接预览最终效果</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fwchs62brhj21n80rq0xg.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fwchs62brhj21n80rq0xg.jpg" alt></p>
 <p>拿到用户拨入VPN时的remote-ip地址<code>ipaddr</code>，传给geoip的<code>source</code>，解析出对应的geo信息：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">"geoip": &#123;</span><br><span class="line">     "country_code3": "SG",</span><br><span class="line">     "country_name": "Singapore",</span><br><span class="line">     "region_code": "01",</span><br><span class="line">     "continent_code": "AS",</span><br><span class="line">     "timezone": "Asia/Singapore",</span><br><span class="line">     "country_code2": "SG",</span><br><span class="line">     "region_name": "Central Singapore Community Development Council",</span><br><span class="line">     "city_name": "Singapore",</span><br><span class="line">     "longitude": 103.8558,</span><br><span class="line">     "ip": "116.87.87.164",</span><br><span class="line">     "latitude": 1.2931,</span><br><span class="line">     "coordinates": [</span><br><span class="line">       103.8558,</span><br><span class="line">       <span class="number">1.2931</span></span><br><span class="line">     ],</span><br><span class="line">     "location": &#123;</span><br><span class="line">       "lat": 1.2931,</span><br><span class="line">       "lon": 103.8558</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;,</span><br></pre></td></tr></table></figure></p>
 <p><strong>坑：</strong></p>
 <blockquote>
@@ -354,7 +357,7 @@
 <h3 id="output：输出"><a href="#output：输出" class="headerlink" title="output：输出"></a>output：输出</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">output &#123;</span><br><span class="line">  elasticsearch &#123;</span><br><span class="line">    hosts =&gt; [<span class="string">"172.17.40.52:9200"</span>]</span><br><span class="line">    index =&gt; <span class="string">"logstash-asa-%&#123;+YYYY.MM.dd&#125;"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>没什么好说的了，host是指定es的地址，index指定索引名，坑已踩。</p>
 <p>sysLog日志的收集部分就是这样了，分析的话，等我再研究下看看有没有什么好分享的。</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fv11hkv32uj21im13ee81.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fv11hkv32uj21im13ee81.jpg" alt></p>
 <p>参考文档：<br>[1] <a href="https://jackhanington.com/blog/2015/06/16/send-cisco-asa-syslogs-to-elasticsearch-using-logstash/" target="_blank" rel="noopener">Send Cisco ASA Syslogs to Elasticsearch Using Logstash</a><br>[2] <a href="https://jackhanington.com/blog/2014/04/21/using-logstash-elasticsearch-and-kibana-for-cisco-asa-syslog-message-analysis/" target="_blank" rel="noopener">Using Logstash, Elasticsearch and Kibana for Cisco ASA Syslog Message Analysis.</a><br>[3] <a href="https://www.boyuee.cn/%E6%97%A5%E5%BF%97/2018/03/05/ELK%E5%85%A8%E5%AE%B6%E6%A1%B6/#%E5%85%B3%E4%BA%8Egeoip%E7%9A%84%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener">关于geoip的配置 - ELK全家桶</a><br>[4] <a href="https://birdben.github.io/2017/01/23/ELK/ELK%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89ELK%E5%88%A9%E7%94%A8GeoIP%E8%BF%9B%E8%A1%8C%E5%9C%B0%E7%90%86%E5%AE%9A%E4%BD%8D/" target="_blank" rel="noopener">ELK利用GeoIP进行地理定位</a><br>[5] <a href="https://autofei.wordpress.com/2017/01/11/visualize-geo-location-of-log-using-elasticsearch-logstash-kibana/" target="_blank" rel="noopener">Visualize Geo location of log using Elasticsearch + Logstash + Kibana</a><br>[6] <a href="https://success.trendmicro.com/solution/TP000086250-What-are-Syslog-Facilities-and-Levels" target="_blank" rel="noopener">What are Syslog Facilities and Levels?</a><br>[7] <a href="https://community.cisco.com/t5/vpn-and-anyconnect/cisco-asa-5510-vpn-login-history/td-p/2090555" target="_blank" rel="noopener">Cisco ASA 5510 VPN login history</a></p>
 
       
@@ -366,15 +369,15 @@
 
   <div class="post-copyright">
     <p class="copyright-item">
-      <span>Author: </span>
+      <span>原文作者: </span>
       <a href="http://nbma.info">Mansur</a>
     </p>
     <p class="copyright-item">
-      <span>Link: </span>
+      <span>原文链接: </span>
       <a href="http://nbma.info/elk-conf/">http://nbma.info/elk-conf/</a>
     </p>
     <p class="copyright-item">
-      <span>License: </span>
+      <span>许可协议: </span>
       
       <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
@@ -385,8 +388,8 @@
       
       
   <div class="post-reward">
-    <input type="checkbox" name="reward" id="reward" hidden />
-    <label class="reward-button" for="reward">Reward</label>
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
     <div class="qr-code">
       
       
@@ -411,11 +414,11 @@
             
               <a href="/tags/centos/">centos</a>
             
-              <a href="/tags/monitor/">monitor</a>
-            
               <a href="/tags/asa/">asa</a>
             
               <a href="/tags/SSLVPN/">SSLVPN</a>
+            
+              <a href="/tags/monitor/">monitor</a>
             
               <a href="/tags/elk/">elk</a>
             
@@ -428,13 +431,13 @@
       <a class="prev" href="/snmp-url/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">一些不太好找的mib/oid</span>
-        <span class="prev-text nav-mobile">Prev</span>
+        <span class="prev-text nav-mobile">上一篇</span>
       </a>
     
     
       <a class="next" href="/elk-setup/">
         <span class="next-text nav-default">elk部署</span>
-        <span class="prev-text nav-mobile">Next</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -512,11 +515,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
