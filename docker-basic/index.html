@@ -260,7 +260,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@bogon ~]<span class="comment"># uname -r</span></span><br><span class="line">3.10.0-693.21.1.el7.x86_64</span><br></pre></td></tr></table></figure>
 <h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#移除旧版本</span></span><br><span class="line">yum remove docker \</span><br><span class="line">           docker-client \</span><br><span class="line">           docker-client-latest \</span><br><span class="line">           docker-common \</span><br><span class="line">           docker-latest \</span><br><span class="line">           docker-latest-logrotate \</span><br><span class="line">           docker-logrotate \</span><br><span class="line">           docker-selinux \</span><br><span class="line">           docker-engine-selinux \</span><br><span class="line">           docker-engine</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#安装一些必要的系统工具</span></span><br><span class="line">yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加阿里的yum源</span></span><br><span class="line">yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line"></span><br><span class="line"><span class="comment">#更新 yum 缓存：</span></span><br><span class="line">yum makecache fast</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装docker-ce</span></span><br><span class="line">yum -y install docker-ce</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动服务</span></span><br><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
 <h3 id="测试hello-world"><a href="#测试hello-world" class="headerlink" title="测试hello-world"></a>测试hello-world</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/mw690/68e0aeafly1fwrga1nr1mj20vo0sw7av.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/mw690/68e0aeafly1fwrga1nr1mj20vo0sw7av.jpg" alt></p>
 <p>使用docker ps可以查看当前正在运行的容器。</p>
 <h2 id="使用脚本安装docker"><a href="#使用脚本安装docker" class="headerlink" title="使用脚本安装docker"></a>使用脚本安装docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line"></span><br><span class="line">sudo sh get-docker.sh</span><br><span class="line"></span><br><span class="line">systemctl start docker</span><br><span class="line"></span><br><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
 <h2 id="镜像加速"><a href="#镜像加速" class="headerlink" title="镜像加速"></a>镜像加速</h2><p>由于某些原因，从官网拉取docker镜像十分缓慢，所以建议配置国内的镜像源。<br>这里使用163的docker镜像源<a href="http://hub-mirror.c.163.com" target="_blank" rel="noopener">http://hub-mirror.c.163.com</a></p>
@@ -312,12 +312,12 @@
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
         </label>
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
         </label>
       
     </div>
@@ -441,7 +441,7 @@
      
       2013 - 
     
-    2019
+    2020
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

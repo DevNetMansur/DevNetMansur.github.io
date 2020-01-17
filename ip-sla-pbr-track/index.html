@@ -254,7 +254,7 @@
         <p>目前的网络情况，无论是LAN还是WAN，冗余越来越多，SLA也变的越来越重要。自己不熟悉的部分就一点一点消灭掉。</p>
 <p>以思科设备为例，多WAN冗余接入最佳实践方案：使用策略路由PBR，将内部不同网段出向流量的下一跳修改成不同的WAN出口，使用SLA和track配合PBR进行链路检测和冗余切换。<br><a id="more"></a><br>策略路由，Policy-based Routing，当一个流量到达路由器设备时，会优先被策略路由处理，然后才是查询路由表。基于此来实现多出口冗余。</p>
 <p>以这个拓扑为例：</p>
-<p><img src="https://ws1.sinaimg.cn/mw690/68e0aeafly1fy7h7736ppj211g0eedj8.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/mw690/68e0aeafly1fy7h7736ppj211g0eedj8.jpg" alt></p>
 <p>路由器Border作为出口，连接了ISP1和ISP2两个ISP的WAN出口；R1内部有终端PC用户（192.168.1.x）和一些Server集群(10.0.0.x)，使用策略路由实现PC通过ISP1访问互联网，Server通过ISP2访问互联网。<br>基本ip配置，内网路由，外网路由等基本配置略</p>
 <h2 id="SLA配置"><a href="#SLA配置" class="headerlink" title="SLA配置"></a>SLA配置</h2><p>首先在Border路由器上配置SLA检测到ISP1,ISP2链路的可达性。</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ip sla <span class="number">1</span></span><br><span class="line"> icmp-echo <span class="number">1.1</span><span class="number">.1</span><span class="number">.2</span> <span class="keyword">source</span>-ip <span class="number">1.1</span><span class="number">.1</span><span class="number">.1</span></span><br><span class="line"> threshold <span class="number">100</span></span><br><span class="line"> timeout <span class="number">100</span></span><br><span class="line"> frequency <span class="number">3</span></span><br><span class="line">ip sla schedule <span class="number">1</span> life forever start-time now</span><br><span class="line"></span><br><span class="line"><span class="comment">#track 100检测ISP1的可达性</span></span><br><span class="line">track <span class="number">100</span> ip sla <span class="number">1</span> reachability</span><br><span class="line"></span><br><span class="line">ip sla <span class="number">2</span></span><br><span class="line"> icmp-echo <span class="number">2.2</span><span class="number">.2</span><span class="number">.2</span> <span class="keyword">source</span>-interface Ethernet0/<span class="number">1</span></span><br><span class="line"> threshold <span class="number">100</span></span><br><span class="line"> timeout <span class="number">100</span></span><br><span class="line"> frequency <span class="number">3</span></span><br><span class="line">ip sla schedule <span class="number">2</span> life forever start-time now</span><br><span class="line"></span><br><span class="line"><span class="comment">#track 200检测ISP2的可达性</span></span><br><span class="line">track <span class="number">200</span> ip sla <span class="number">2</span> reachability</span><br></pre></td></tr></table></figure>
@@ -307,12 +307,12 @@
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
         </label>
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
         </label>
       
     </div>
@@ -438,7 +438,7 @@
      
       2013 - 
     
-    2019
+    2020
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

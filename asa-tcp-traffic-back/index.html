@@ -246,7 +246,7 @@
       
         <p>环境R2，R3网关在ASA，R3背后有10.0.0.0网络，ASA路由10.0.0.0/24下一跳是R3<br>问题，R2访问10.0.0.0/24网段时，流量到达ASA，icmp和udp可以通过，tcp会被丢弃</p>
 <a id="more"></a>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1frvsx7w9rxj21ak0oate1.jpg" alt="拓扑"></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1frvsx7w9rxj21ak0oate1.jpg" alt="拓扑"></p>
 <p>1，R2的10.1.1.44发起TCP流量访问10.0.0.0网段web server<br>2，ASA收到改流量，发现出站接口是相同的security-level，需要敲下这条命令：<br>    ASA(config)#same-security permit intra-interface<br>3，然后这个SYN包会通过R3路由到达R4，<br>4，Web server返回SYN-ACK，这个包在到达R3之后，将会被直接通过mac地址转发到R2<br>5，R2收到该数据包会直接丢弃，这是因为ASA的“tcp序列号随机化”的默认特性，<br>    当ASA从任意接口收到一个的SYN包时，会将seq随机成另一个数字，记录在状态表中，然后再发出，这是他的一个安全策略。<br>    而在上例中，假定R2初始的SYN包的seq是12345，经过ASA被随机成为56789，R4回报只会确认收到56789，这个包在到达R2之后会被丢弃，因为R2希望确认12345<br>6，为了避免这种内部的异步路由导致的丢包，需要在ASA赦免特定tcp流量的状态化检测，配置如下：</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">object-group network LOCAL</span><br><span class="line"> network-object <span class="number">10.1</span><span class="number">.1</span><span class="number">.0</span> <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span></span><br><span class="line">object-group network VPN</span><br><span class="line"> network-object <span class="number">10.0</span><span class="number">.0</span><span class="number">.0</span> <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span></span><br><span class="line">access-list TCP-BYPASS extended permit ip object-group LOCAL object-group VPN</span><br><span class="line">//抓取需要bypass的明细流量</span><br><span class="line">ASA(config)<span class="comment">#class-map TCP-BYPASS</span></span><br><span class="line">ASA(config-cmap)<span class="comment">#match access-list TCP-BYPASS</span></span><br><span class="line">//创建class-map匹配感兴趣流量</span><br><span class="line">ASA(config-cmap)<span class="comment">#policy-map TCP-BYPASS-POLICY</span></span><br><span class="line">ASA(config-pmap)<span class="comment">#class TCP-BYPASS</span></span><br><span class="line">//创建policy-map,指定class-map</span><br><span class="line">ASA(config-pmap-c)<span class="comment">#set connection advanced-options tcp-state-bypass</span></span><br><span class="line">//开启tcp bypass特性</span><br><span class="line">ASA(config-pmap-c)<span class="comment">#service-policy TCP-BYPASS-POLICY interface inside</span></span><br><span class="line">//针对inside调用</span><br></pre></td></tr></table></figure>
 <p>其他：<br>    如果ping也被ASA检测，那么也需要禁用，否则从10.0.0.0发起的ping是不通的，<br>    其他被ASA检测的协议也是类似</p>
@@ -285,12 +285,12 @@
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
         </label>
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
         </label>
       
     </div>
@@ -414,7 +414,7 @@
      
       2013 - 
     
-    2019
+    2020
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

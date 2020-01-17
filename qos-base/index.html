@@ -262,9 +262,9 @@
 <li>链路效率：通过头部压缩或者链路分段，来提高带宽效率</li>
 </ul>
 <p>分类和标记是实现差分服务的前提和基础；流量监管、流量整形、接口限速、拥塞管理和拥塞避免从不同方面对网络流量及其分配的资源实施控制，是提供差分服务的具体体现.<br>各种QoS技术在网络设备上的处理顺序如下图:</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxy9pmuibgj20e805emxe.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxy9pmuibgj20e805emxe.jpg" alt></p>
 <p>不同技术能应用的方向如下：</p>
-<p><img src="https://ws1.sinaimg.cn/mw690/68e0aeafly1fxy9mnjkimj21ly10sx1f.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/mw690/68e0aeafly1fxy9mnjkimj21ly10sx1f.jpg" alt></p>
 <h2 id="QoS部署模式"><a href="#QoS部署模式" class="headerlink" title="QoS部署模式"></a>QoS部署模式</h2><p>1）CLI：早期传统网络去部署</p>
 <p>2）MQC：（重点）模块化QoS</p>
 <ul>
@@ -278,14 +278,14 @@
 <li>Enterprise</li>
 </ul>
 <h2 id="用于QoS的头部字段"><a href="#用于QoS的头部字段" class="headerlink" title="用于QoS的头部字段"></a>用于QoS的头部字段</h2><p>二层报头没有专门预留的QOS位，在VLAN帧头和MPLS封装中有以下字段可以用于QOS：<br><strong>COS位</strong>：trunk技术，在802.1q报头中有一个3位的PRI ，分为0~7八个等级，5代表语音</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxya3p50mwj20do03rdfp.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxya3p50mwj20do03rdfp.jpg" alt></p>
 <p><strong>MPLS的EXP位</strong>，3位，分为0~7八个等级</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxya40tv5sj20cy03x747.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxya40tv5sj20cy03x747.jpg" alt></p>
 <p>三层的ip包头部有一个8位的ToS位，有两种不同的方法来表示数据包的优先级：<strong>IPP</strong>和<strong>DSCP</strong>。</p>
 <ul>
 <li><strong>IP precedence</strong><br>使用TOS的高3位，0~7等级，后5位置0</li>
 </ul>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxya4qfg95j20dz05n3ye.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxya4qfg95j20dz05n3ye.jpg" alt></p>
 <ul>
 <li><strong>DSCP区分服务代码点</strong><br>使用TOS的高6位，有0~63个等级，可以标记的种类更多，一般分为四种：<ul>
 <li>Default，6bit全0</li>
@@ -374,7 +374,7 @@
 <p>令牌桶：<br>Bc：burst size 令牌桶的大小<br>Tc：time interval 加令牌的时间，多久加一次令牌<br>CIR：每秒往桶里加令牌的速率，决定了用户流量的大小，CIR = Bc / Tc</p>
 <p>Be：第二个令牌的大小<br>PIR：向第二个令牌的添加令牌速率</p>
 <p><strong>单速单桶</strong>：<br>单速单桶模式不允许流量突发，当用户的流量速率小于配置的CIR时，报文被认为是conform；当用户的流量大于CIR时直接被认为是exceed(思科exceed华为violate)。</p>
-<p>(图中Tc代表桶里令牌的数量，CBS代表令牌桶的容量即Bc)<br><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxybrwa1koj20890bfweg.jpg" alt></p>
+<p>(图中Tc代表桶里令牌的数量，CBS代表令牌桶的容量即Bc)<br><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxybrwa1koj20890bfweg.jpg" alt></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#如果只配置CIR，不指定Bc，那么默认Bc等于1500bytes或者 CIR数值 / 32</span></span><br><span class="line"> class <span class="number">100</span></span><br><span class="line">  police <span class="number">8000</span> conform-action transmit  exceed-action drop </span><br><span class="line"> class <span class="number">200</span></span><br><span class="line">  police cir <span class="number">8000</span> conform-action transmit  exceed-action drop </span><br><span class="line"> class <span class="number">300</span></span><br><span class="line">  police <span class="number">8000</span> <span class="number">1500</span> conform-action transmit  exceed-action drop </span><br><span class="line"> class <span class="number">400</span></span><br><span class="line">  police cir <span class="number">8000</span> bc <span class="number">1500</span> conform-action transmit  exceed-action drop</span><br></pre></td></tr></table></figure>
 <p><strong>单速双桶</strong>：<br>支持突发流量，用户的流量会出现三种结果：</p>
 <ul>
@@ -382,10 +382,10 @@
 <li>大于CIR并小于或等于CIR与Be之和（也就是符合两个桶令牌之和）（exceed）</li>
 <li>超过CIR与Be之和（也就是超过两个桶令牌之和）（violate）</li>
 </ul>
-<p>(图中Tc、Te代表桶里令牌的数量，CBS，EBS代表令牌桶的容量即Bc、Be)<br><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxybthilw4j20cd0bfaa4.jpg" alt></p>
+<p>(图中Tc、Te代表桶里令牌的数量，CBS，EBS代表令牌桶的容量即Bc、Be)<br><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxybthilw4j20cd0bfaa4.jpg" alt></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#如果只配置CIR、Bc，不指定Be，那么默认Be等于1500bytes或者CIR数值 / 32。</span></span><br><span class="line"> class <span class="number">500</span></span><br><span class="line">  police <span class="number">8000</span> <span class="number">1000</span> conform-action transmit  exceed-action set-prec-transmit <span class="number">1</span> violate-action drop </span><br><span class="line"> class <span class="number">600</span></span><br><span class="line">  police <span class="number">8000</span> <span class="number">1000</span> <span class="number">1300</span> conform-action transmit  exceed-action set-prec-transmit <span class="number">1</span> violate-action drop </span><br><span class="line"> class <span class="number">700</span></span><br><span class="line">  police cir <span class="number">8000</span> bc <span class="number">1000</span> be <span class="number">1300</span> conform-action transmit  exceed-action set-prec-transmit <span class="number">1</span> violate-action drop</span><br></pre></td></tr></table></figure>
 <p><strong>双速双桶</strong>：</p>
-<p>(图中Tc、Tp代表桶里令牌的数量，CBS，PBS代表令牌桶的容量即Bc、Be)<br><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxybur6jb1j20cd0bfmx8.jpg" alt></p>
+<p>(图中Tc、Tp代表桶里令牌的数量，CBS，PBS代表令牌桶的容量即Bc、Be)<br><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxybur6jb1j20cd0bfmx8.jpg" alt></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class <span class="number">800</span></span><br><span class="line"> police cir <span class="number">8000</span> bc <span class="number">1000</span> pir <span class="number">8000</span> be <span class="number">1200</span> conform-action transmit  exceed-action transmit  violate-action drop</span><br></pre></td></tr></table></figure>
 <h3 id="6，链路效率"><a href="#6，链路效率" class="headerlink" title="6，链路效率"></a>6，链路效率</h3><p>一般部署在低速广域网链路</p>
 <ul>
@@ -396,9 +396,9 @@
 <h2 id="QoS的测试验证"><a href="#QoS的测试验证" class="headerlink" title="QoS的测试验证"></a>QoS的测试验证</h2><p>最早学习的时候，所有人都说模拟器只能敲QoS命令，无法验证效果，最对就是show policy-map interface 看下配置结果。<br>确实，模拟器没有真实的流量，也没有合适监控图表能实时显示流量。<br>这次复习QoS，我想试试能不能测试，首先是拿<a href="/docker-basic/">docker</a>启动一个<a href="/Centos7-deploy-zabbix3/">zabbix</a>容器，然后为了查看方便，虚机上还装了<a href="/grafana-zabbix-prometheus/">grafana</a>，这些工具之前都介绍过.</p>
 <p>关于路由器镜像，IOL镜像不支持snmp；dynamic镜像支持snmp，但是接口流量好像不是实时的，大概1分钟才更新一次，在这1分钟内取多少次都不变（注：SNMP的大部分数值都是自增的，实际结果要取差值）；vIOS由于本身不是模拟器，而是虚拟的IOS，所以完美支持snmp功能，可以用于各种测试和监控。</p>
 <p>关于QOS测试，效果比较好的就是流量整形了，我是拿两台路由器通过ping size产生的流量，以<code>shape average 500000</code>为例，结果如下图:</p>
-<p><img src="https://ws1.sinaimg.cn/mw690/68e0aeafly1fy8z0uitlbj21ey0ja0w6.jpg" alt="shape average 500000"></p>
+<p><img src="https://wx1.sinaimg.cn/mw690/68e0aeafly1fy8z0uitlbj21ey0ja0w6.jpg" alt="shape average 500000"></p>
 <p>然后，流量管制的效果不太理想，原因是我的流量太单一太少，数据包的大小都是固定的，这一秒令牌够的时候就转发，下一秒不够流量就是0，没能完美出图：</p>
-<p><img src="https://ws1.sinaimg.cn/mw690/68e0aeafly1fy8zm1wo66j21cy0j041t.jpg" alt="police 500000 conform-action transmit  exceed-action drop"></p>
+<p><img src="https://wx1.sinaimg.cn/mw690/68e0aeafly1fy8zm1wo66j21cy0j041t.jpg" alt="police 500000 conform-action transmit  exceed-action drop"></p>
 <p>参考文档<br><a href="http://support.huawei.com/enterprise/zh/doc/DOC1000069504" target="_blank" rel="noopener">配置指南-QoS</a><br><a href="http://china-ccie.com/ccie/lilun/QOS/QOS.html#6" target="_blank" rel="noopener">CCIE资料库→CCIE R&amp;S v4.0 理论→QOS</a><br><a href="http://www.net130.com/CMS/Pub/Tech/tech_zh/2007_11_13_57331.htm" target="_blank" rel="noopener">思科QOS中的令牌桶算法</a><br><a href="https://blog.csdn.net/YEYUANGEN/article/details/20529793" target="_blank" rel="noopener">qos令牌桶（Token Bucket）算法解析</a><br><a href="https://blog.csdn.net/alone_map/article/details/51863472" target="_blank" rel="noopener">QOS-6 管制policing和整形shaping</a><br><a href="https://blog.csdn.net/kaoa000/article/details/78477774" target="_blank" rel="noopener">QoS基础及技术原理——2</a></p>
 
       
@@ -435,12 +435,12 @@
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
         </label>
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
         </label>
       
     </div>
@@ -564,7 +564,7 @@
      
       2013 - 
     
-    2019
+    2020
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

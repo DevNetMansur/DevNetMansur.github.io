@@ -270,18 +270,18 @@
 </ul>
 <h2 id="IS-IS的NET地址结构"><a href="#IS-IS的NET地址结构" class="headerlink" title="IS-IS的NET地址结构"></a>IS-IS的NET地址结构</h2><p>网络服务访问点NSAP（Network Service Access Point）是OSI协议中用于定位资源的地址。NSAP的地址结构如下图所示，它由IDP（Initial Domain Part）和DSP（Domain Specific Part）组成。IDP和DSP的长度都是可变的，NSAP总长最多是20个字节，最少8个字节。</p>
 <p>在IS-IS路由选择过程中，没有使用NSAP地址中的NSEL，所以NSEL始终保持为00。当NSEL为00时，我们就称这个NSAP地址为NET（Network Entity Titile，网络实体名）地址，NET地址用来唯一地表示IS-IS路由选择域中的OSI主机。路由器使用NET地址来标识自己。<br>路由器在发送的链路状态数据包（LSP）中用NET来标识自己，这类似于OSPF发送的LSA中的路由器ID（Router ID）。</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxnssxkpxlj20e603haac.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxnssxkpxlj20e603haac.jpg" alt></p>
 <p>具体字段就不解析了，其中的区域ID是可变长的，建议是用49开通的本地私有域；system ID建议全局唯一，NSEL在ip网络中没有使用，填0就行。</p>
 <p>例子 1：net 49.0001.0000.0000.0001.00<br>代表 area = 49.0001; systemID = 0000.0000.0001; NSEL = 00.</p>
 <p>例子 2：net ab.cdef.1234.5678.90ab.cdef.00<br>代表 area = ab.cdef.1234; systemID = 5678.90ab.cdef; NESL = 00.</p>
 <h2 id="IS-IS的metric"><a href="#IS-IS的metric" class="headerlink" title="IS-IS的metric"></a>IS-IS的metric</h2><p>在思科路由器中，ISIS默认只使用default-metric 10来计算度量值，可以使用命令metric-style来引入Delay延时，Expense花销和Reliabilty可靠性来计算路由参考。<br>也可以直接在接口下修改metric值来影响选路</p>
 <h2 id="IS-IS的配置示例"><a href="#IS-IS的配置示例" class="headerlink" title="IS-IS的配置示例"></a>IS-IS的配置示例</h2><p>这里用不同图标来表示不同角色的设备（R3,R5是level-2设备）</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxo0c72b1hj21aq0oyti7.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxo0c72b1hj21aq0oyti7.jpg" alt></p>
 <p>基本配置</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">router isis</span><br><span class="line"> net <span class="number">49.0001</span><span class="number">.0000</span><span class="number">.0000</span><span class="number">.0001</span><span class="number">.00</span>   <span class="comment">#net</span></span><br><span class="line"> is-type level-<span class="number">1</span></span><br><span class="line"></span><br><span class="line">interface Ethernet0/<span class="number">0</span></span><br><span class="line"> ip address <span class="number">16.1</span><span class="number">.1</span><span class="number">.1</span> <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span></span><br><span class="line"> ip router isis  <span class="comment">#接口下启用isis</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#接口下修改metric</span></span><br><span class="line">isis metric XXX &#123;level-<span class="number">1</span>/level-<span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
 <p>常用的命令：</p>
-<p>show isis topology #查看到达本区域的每个NET的metric和下一跳<br><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxo09gtbc3j211w0m8aeg.jpg" alt></p>
-<p>show isis nei #查看邻居状态和角色类型<br><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxo08ew88uj2142090myt.jpg" alt></p>
+<p>show isis topology #查看到达本区域的每个NET的metric和下一跳<br><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxo09gtbc3j211w0m8aeg.jpg" alt></p>
+<p>show isis nei #查看邻居状态和角色类型<br><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxo08ew88uj2142090myt.jpg" alt></p>
 <p>参考文档：<br>[1]. <a href="http://www.net130.com/ccnp/tech/ISISbj%20.pdf" target="_blank" rel="noopener">IS-IS路由协议中文教程v1</a><br>[2]. <a href="https://cshihong.github.io/2018/01/08/ISIS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" target="_blank" rel="noopener">ISIS基础知识</a><br>[3]. <a href="http://blog.51cto.com/xuanbo/201504" target="_blank" rel="noopener">IS-IS路由协议（一）</a></p>
 
       
@@ -318,12 +318,12 @@
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
         </label>
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
         </label>
       
     </div>
@@ -445,7 +445,7 @@
      
       2013 - 
     
-    2019
+    2020
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

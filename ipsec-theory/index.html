@@ -269,7 +269,7 @@
 </blockquote>
 <p><img src="https://ww1.sinaimg.cn/large/68e0aeafly1fqkmt3p5n0j20g306qdgj.jpg" alt><br>最终，对感兴趣流<br>使用第三把密钥对数据进行加密，使用第二阶段1-2协商的加密策略 </p>
 <h2 id="ikev2协商过程"><a href="#ikev2协商过程" class="headerlink" title="ikev2协商过程"></a>ikev2协商过程</h2><h3 id="第一阶段第1-2包-1"><a href="#第一阶段第1-2包-1" class="headerlink" title="第一阶段第1-2包"></a>第一阶段第1-2包</h3><p>相当于ikev1第一阶段的1-4</p>
-<h3 id="第二阶段第3-4包"><a href="#第二阶段第3-4包" class="headerlink" title="第二阶段第3-4包"></a>第二阶段第3-4包</h3><p>相当于ikev1第一阶段的5-6和第二阶段的1-3<br><img src="https://ws1.sinaimg.cn/mw690/68e0aeafly1fqx6dtazw6j213a0s2dqn.jpg" alt><br><em>图中cisco FlexVPN即思科的ikev2 vpn</em></p>
+<h3 id="第二阶段第3-4包"><a href="#第二阶段第3-4包" class="headerlink" title="第二阶段第3-4包"></a>第二阶段第3-4包</h3><p>相当于ikev1第一阶段的5-6和第二阶段的1-3<br><img src="https://wx1.sinaimg.cn/mw690/68e0aeafly1fqx6dtazw6j213a0s2dqn.jpg" alt><br><em>图中cisco FlexVPN即思科的ikev2 vpn</em></p>
 <h2 id="ikev1的esp数据包结构"><a href="#ikev1的esp数据包结构" class="headerlink" title="ikev1的esp数据包结构"></a>ikev1的esp数据包结构</h2><h3 id="esp的加密位置"><a href="#esp的加密位置" class="headerlink" title="esp的加密位置"></a>esp的加密位置</h3><p>1、<strong>传输模式</strong>：通讯点和加密点一致<br>这种模式下ESP报头在ip 头部之内，对四层以内的报头和数据进行加密<br>2、<strong>隧道模式</strong>：通讯点和加密点不一致<br>ESP直接将原来三层以内的报文全部加密，重新生成新的ip头部</p>
 <p>这两种模式相比，transform模式数据比原数据包只多了一个esp头部，包长度有优势，传输效率高；tunnel模式在处理数据的时候不要拆开IP头部，直接加密，更快。</p>
 <p>这部分由于ESP之后的部分全是加密的，所以只能通过数据包大小来对比.需要真机实现，等有机会了再做，<del>模拟器只能为transport，设置tunnel无效</del></p>
@@ -314,12 +314,12 @@
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
         </label>
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
         </label>
       
     </div>
@@ -443,7 +443,7 @@
      
       2013 - 
     
-    2019
+    2020
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

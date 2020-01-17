@@ -246,18 +246,18 @@
       
         <p>一直没做过微信告警集成到zabbix，试了下，还挺简单的，记录一下<br><a id="more"></a></p>
 <p>首先是需要有一个企业微信，在其中创建一个自建应用</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1g05zl8y3oej21240uiwh5.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1g05zl8y3oej21240uiwh5.jpg" alt></p>
 <p>设置好可见部门，记录<code>AgentId</code>和<code>Secret</code></p>
 <p>然后再“通讯录”记下需要接受告警信息的<code>部门ID</code>，在“我的企业”-“企业信息”里记录<code>企业ID</code></p>
 <p>本着 不重复造轮子的原则，我找了这个脚本<a href="https://github.com/X-Mars/Zabbix-Alert-WeChat" target="_blank" rel="noopener">X-Mars/Zabbix-Alert-WeChat</a><br>这个也是zabbix官方推荐的脚本。</p>
 <p>将上面记下的四个ID填入脚本指定字段。<br>然后上传到<code>/usr/local/share/zabbix/alertscripts</code>或者 <strong>AlertScriptsPath</strong> 指定的其它位置.<br>设置好执行权限和属组</p>
 <p>然后再zabbix web中 “管理”-“报警媒介类型”-“创建”</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1g0600zxg5dj20qc0sydit.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1g0600zxg5dj20qc0sydit.jpg" alt></p>
 <p>脚本名称<code>wechat.py</code><br>添加三个参数<code>{ALERT.SENDTO}</code> <code>{ALERT.SUBJECT}</code> <code>{ALERT.MESSAGE}</code></p>
 <p>然后是在“配置”-“动作”-“操作”中 添加触发器的触发介质，把刚才创建的报警媒介wechat加上</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1g0605vr5vjj20ju0hm0vs.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1g0605vr5vjj20ju0hm0vs.jpg" alt></p>
 <p>最后是在“管理”-“用户”-“报警媒介”中，启用报警媒介wechat</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1g0607aycjjj20xs0n279j.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1g0607aycjjj20xs0n279j.jpg" alt></p>
 
       
     </div>
@@ -293,12 +293,12 @@
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
         </label>
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
         </label>
       
     </div>
@@ -424,7 +424,7 @@
      
       2013 - 
     
-    2019
+    2020
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

@@ -311,7 +311,7 @@
 <p>更多ASA LOG message对应信息请查询<a href="https://www.cisco.com/c/en/us/td/docs/security/asa/syslog/b_syslog.html" target="_blank" rel="noopener">思科官网文档</a></p>
 </blockquote>
 <p>除了list以外，logging trap也可以根据不用的日志等级来过滤发送，常用的是<code>logging trap informational</code></p>
-<p>各个等级的大致描述如下<br><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fuzyj5vciaj20rs0l9jtp.jpg" alt></p>
+<p>各个等级的大致描述如下<br><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fuzyj5vciaj20rs0l9jtp.jpg" alt></p>
 <p>此外，还有一条logging facility 22<br>facility用于区分不同类型的设备或进程产生的syslog，思科建议设置为21，22或23<br>这个值用于计算syslog的优先级，Priority = Facility * 8 + Level</p>
 <hr>
 <h2 id="logstash的配置"><a href="#logstash的配置" class="headerlink" title="logstash的配置"></a>logstash的配置</h2><p>logstash的配置文件包括三个部分：<code>input</code>, <code>filter</code>, <code>output</code>.<br>详解如下：</p>
@@ -343,7 +343,7 @@
 <p>这里主要对113039中的remote-ip进行解析。logstash内置的表达式中没有对ASA-6-113039日志的匹配。</p>
 <p>一条ASA-6-113039的日志经过上面的grok解析之后，<code>cisco_message</code>内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Group &lt;ssl-policy&gt; User &lt;xiaoming&gt; IP &lt;116.87.87.164&gt; AnyConnect parent session started.</span><br></pre></td></tr></table></figure></p>
 <p>分别是用户所在安全组，用户名，用户拨入VPN时的源IP地址，使用正则表达式提取到这三部分内容。<br>这里推荐使用kibana内置的dev tools调试表达式，直接预览最终效果</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fwchs62brhj21n80rq0xg.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fwchs62brhj21n80rq0xg.jpg" alt></p>
 <p>拿到用户拨入VPN时的remote-ip地址<code>ipaddr</code>，传给geoip的<code>source</code>，解析出对应的geo信息：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">"geoip": &#123;</span><br><span class="line">     "country_code3": "SG",</span><br><span class="line">     "country_name": "Singapore",</span><br><span class="line">     "region_code": "01",</span><br><span class="line">     "continent_code": "AS",</span><br><span class="line">     "timezone": "Asia/Singapore",</span><br><span class="line">     "country_code2": "SG",</span><br><span class="line">     "region_name": "Central Singapore Community Development Council",</span><br><span class="line">     "city_name": "Singapore",</span><br><span class="line">     "longitude": 103.8558,</span><br><span class="line">     "ip": "116.87.87.164",</span><br><span class="line">     "latitude": 1.2931,</span><br><span class="line">     "coordinates": [</span><br><span class="line">       103.8558,</span><br><span class="line">       <span class="number">1.2931</span></span><br><span class="line">     ],</span><br><span class="line">     "location": &#123;</span><br><span class="line">       "lat": 1.2931,</span><br><span class="line">       "lon": 103.8558</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;,</span><br></pre></td></tr></table></figure></p>
 <p><strong>坑：</strong></p>
 <blockquote>
@@ -357,7 +357,7 @@
 <h3 id="output：输出"><a href="#output：输出" class="headerlink" title="output：输出"></a>output：输出</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">output &#123;</span><br><span class="line">  elasticsearch &#123;</span><br><span class="line">    hosts =&gt; [<span class="string">"172.17.40.52:9200"</span>]</span><br><span class="line">    index =&gt; <span class="string">"logstash-asa-%&#123;+YYYY.MM.dd&#125;"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>没什么好说的了，host是指定es的地址，index指定索引名，坑已踩。</p>
 <p>sysLog日志的收集部分就是这样了，分析的话，等我再研究下看看有没有什么好分享的。</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fv11hkv32uj21im13ee81.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fv11hkv32uj21im13ee81.jpg" alt></p>
 <p>参考文档：<br>[1] <a href="https://jackhanington.com/blog/2015/06/16/send-cisco-asa-syslogs-to-elasticsearch-using-logstash/" target="_blank" rel="noopener">Send Cisco ASA Syslogs to Elasticsearch Using Logstash</a><br>[2] <a href="https://jackhanington.com/blog/2014/04/21/using-logstash-elasticsearch-and-kibana-for-cisco-asa-syslog-message-analysis/" target="_blank" rel="noopener">Using Logstash, Elasticsearch and Kibana for Cisco ASA Syslog Message Analysis.</a><br>[3] <a href="https://www.boyuee.cn/%E6%97%A5%E5%BF%97/2018/03/05/ELK%E5%85%A8%E5%AE%B6%E6%A1%B6/#%E5%85%B3%E4%BA%8Egeoip%E7%9A%84%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener">关于geoip的配置 - ELK全家桶</a><br>[4] <a href="https://birdben.github.io/2017/01/23/ELK/ELK%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89ELK%E5%88%A9%E7%94%A8GeoIP%E8%BF%9B%E8%A1%8C%E5%9C%B0%E7%90%86%E5%AE%9A%E4%BD%8D/" target="_blank" rel="noopener">ELK利用GeoIP进行地理定位</a><br>[5] <a href="https://autofei.wordpress.com/2017/01/11/visualize-geo-location-of-log-using-elasticsearch-logstash-kibana/" target="_blank" rel="noopener">Visualize Geo location of log using Elasticsearch + Logstash + Kibana</a><br>[6] <a href="https://success.trendmicro.com/solution/TP000086250-What-are-Syslog-Facilities-and-Levels" target="_blank" rel="noopener">What are Syslog Facilities and Levels?</a><br>[7] <a href="https://community.cisco.com/t5/vpn-and-anyconnect/cisco-asa-5510-vpn-login-history/td-p/2090555" target="_blank" rel="noopener">Cisco ASA 5510 VPN login history</a></p>
 
       
@@ -394,12 +394,12 @@
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
         </label>
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
         </label>
       
     </div>
@@ -529,7 +529,7 @@
      
       2013 - 
     
-    2019
+    2020
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

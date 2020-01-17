@@ -2,6 +2,104 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://nbma.info/qos-base/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.729Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/ansible-manage-router/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.728Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/https-theory/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.727Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/bgp-best-path-selection-algorithm/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.727Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/oxidized-update/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.726Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/asa-tcp-traffic-back/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.725Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/is-is-protocol/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.725Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/zabbix-wechat-alter/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.724Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/elk-conf/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.724Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/cisco-nat-nvi-back/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.723Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/ip-sla-pbr-track/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.722Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/ipsec-theory/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.721Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/docker-basic/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.720Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://nbma.info/is-ospf-a-pure-link-status-protocol/</loc>
+    
+    <lastmod>2020-01-17T09:55:31.718Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://nbma.info/redeploy-anyconnect-for-macos/</loc>
     
     <lastmod>2019-09-16T08:35:18.351Z</lastmod>
@@ -9,23 +107,9 @@
   </url>
   
   <url>
-    <loc>http://nbma.info/zabbix-wechat-alter/</loc>
-    
-    <lastmod>2019-02-14T07:55:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://nbma.info/snmp-max-value-notify/</loc>
     
     <lastmod>2019-01-17T03:11:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://nbma.info/ansible-manage-router/</loc>
-    
-    <lastmod>2019-01-11T10:54:35.000Z</lastmod>
     
   </url>
   
@@ -72,13 +156,6 @@
   </url>
   
   <url>
-    <loc>http://nbma.info/elk-conf/</loc>
-    
-    <lastmod>2019-01-11T07:39:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://nbma.info/csico2911k-securityk9-license/</loc>
     
     <lastmod>2019-01-11T07:39:11.000Z</lastmod>
@@ -96,13 +173,6 @@
     <loc>http://nbma.info/cisco-switch-reconvery-factory/</loc>
     
     <lastmod>2019-01-11T07:38:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://nbma.info/cisco-nat-nvi-back/</loc>
-    
-    <lastmod>2019-01-11T07:38:50.000Z</lastmod>
     
   </url>
   
@@ -142,23 +212,9 @@
   </url>
   
   <url>
-    <loc>http://nbma.info/bgp-best-path-selection-algorithm/</loc>
-    
-    <lastmod>2019-01-11T07:37:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://nbma.info/asa-vpn-policy-proc/</loc>
     
     <lastmod>2019-01-11T07:37:20.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://nbma.info/asa-tcp-traffic-back/</loc>
-    
-    <lastmod>2019-01-11T07:37:09.000Z</lastmod>
     
   </url>
   
@@ -205,13 +261,6 @@
   </url>
   
   <url>
-    <loc>http://nbma.info/qos-base/</loc>
-    
-    <lastmod>2019-01-11T07:33:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://nbma.info/Prometheus-base/</loc>
     
     <lastmod>2019-01-11T07:33:40.000Z</lastmod>
@@ -247,13 +296,6 @@
   </url>
   
   <url>
-    <loc>http://nbma.info/oxidized-update/</loc>
-    
-    <lastmod>2019-01-11T07:32:45.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://nbma.info/ospf-question/</loc>
     
     <lastmod>2019-01-11T07:32:16.000Z</lastmod>
@@ -282,30 +324,9 @@
   </url>
   
   <url>
-    <loc>http://nbma.info/is-ospf-a-pure-link-status-protocol/</loc>
-    
-    <lastmod>2019-01-11T07:30:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://nbma.info/is-is-protocol/</loc>
-    
-    <lastmod>2019-01-11T07:30:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://nbma.info/ipsec-vpn-ping-asa-inside/</loc>
     
     <lastmod>2019-01-11T07:30:25.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://nbma.info/ipsec-theory/</loc>
-    
-    <lastmod>2019-01-11T07:30:17.000Z</lastmod>
     
   </url>
   
@@ -320,20 +341,6 @@
     <loc>http://nbma.info/ipsec-ikev2-config/</loc>
     
     <lastmod>2019-01-11T07:29:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://nbma.info/ip-sla-pbr-track/</loc>
-    
-    <lastmod>2019-01-11T07:29:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://nbma.info/https-theory/</loc>
-    
-    <lastmod>2019-01-11T07:28:05.000Z</lastmod>
     
   </url>
   
@@ -362,13 +369,6 @@
     <loc>http://nbma.info/gns3-asa842-license/</loc>
     
     <lastmod>2019-01-11T07:27:01.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://nbma.info/docker-basic/</loc>
-    
-    <lastmod>2019-01-11T07:25:39.000Z</lastmod>
     
   </url>
   

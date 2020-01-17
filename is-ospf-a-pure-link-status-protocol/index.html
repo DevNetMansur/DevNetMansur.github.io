@@ -250,18 +250,18 @@
 <p>而OSPF在同一区域内，确实符合链路状态协议的特点；但是在区域间并没有传递链路状态，只是传递了路由信息:网络号，掩码，metric。<br>根据以上得出，<strong>OSPF在区域内是纯链路状态协议，而在区域间更像是距离矢量行为</strong>。</p>
 <p>验证的办法有两种：<br>1，区域间选路的“逐跳”行为<br>2，一个区域的路有更新，传递到其他区域，其他区域的路由并不会运行SPF算法</p>
 <p>使用这个拓扑进行验证，上面是area 0，下面是area 1，R1R4都有环回口宣告进各自区域</p>
-<p><img src="https://ws1.sinaimg.cn/mw690/68e0aeafly1fxln3rbprhj20ie0lsq4z.jpg" width="30%" height="30%"></p>
+<p><img src="https://wx1.sinaimg.cn/mw690/68e0aeafly1fxln3rbprhj20ie0lsq4z.jpg" width="30%" height="30%"></p>
 <p>当路由收敛完毕后，查看R1的路由表，其中4.4.4.4/32这条显示的metric是31：</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxlmhcloy6j20ys0oygrr.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxlmhcloy6j20ys0oygrr.jpg" alt></p>
 <p>查看area 0内路由器的lsdb可以知道，R1从R2学习到的4.4.4.4/32的metric是11，从R3学习到的是101；而R1到达R2,R3的metric分别是10，20；<br>所以R1选择的路径是R1-R3-R2-R4.<br>但是，对数据包进行跟踪的话，实际的路径则是R1-R3-R4.</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxlmldaftlj20ym070dgy.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxlmldaftlj20ym070dgy.jpg" alt></p>
 <p>这是由于R3作为ABR，它从R4获得1类LSA，生成O表项的路由；从R2获得3类LSA，生成O IA表项的路由；优选O表项。不比较metric。</p>
 <p>这种“逐条选路”的行为并不是链路状态协议的特点。</p>
 <p>第二种方式的话，用一个命令就可以确认<code>sh ip os statistics</code></p>
 <p>在area 1的R4上添加一一个环回口，宣告进area 1，等路有更新完毕后，分别在R1R4上执行这条命令：</p>
 <p>可以看到，只有area 1的路由器执行了一次SPF算法：</p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxln0mhsqlj20yq0ls0vg.jpg" alt></p>
-<p><img src="https://ws1.sinaimg.cn/large/68e0aeafly1fxln0tgsidj20yi0lwdil.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxln0mhsqlj20yq0ls0vg.jpg" alt></p>
+<p><img src="https://wx1.sinaimg.cn/large/68e0aeafly1fxln0tgsidj20yi0lwdil.jpg" alt></p>
 <p>分析完了</p>
 
       
@@ -298,12 +298,12 @@
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
         </label>
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://ws1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
         </label>
       
     </div>
@@ -427,7 +427,7 @@
      
       2013 - 
     
-    2019
+    2020
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>
