@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nbma.info/"/>
-  <updated>2019-09-16T08:35:18.351Z</updated>
+  <updated>2020-03-07T14:43:37.564Z</updated>
   <id>http://nbma.info/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些有意思的项目</title>
+    <link href="http://nbma.info/some-interesting-projects/"/>
+    <id>http://nbma.info/some-interesting-projects/</id>
+    <published>2020-03-07T13:36:23.000Z</published>
+    <updated>2020-03-07T14:43:37.564Z</updated>
+    
+    <content type="html"><![CDATA[<p>收藏到浏览器书签时间长就忘了，star多了也懒得翻，还是记这吧。<br><a id="more"></a></p><p>目前最好用的网络资源管理系统<br><a href="https://github.com/netbox-community/netbox" target="_blank" rel="noopener">netbox-community/netbox</a>  </p><p>目前最好用的网络配置备份工具<br><a href="https://github.com/ytti/oxidized" target="_blank" rel="noopener">ytti/oxidized</a>  </p><p>一个正在快速迭代的自动化网管系统<br><a href="https://github.com/afourmy/eNMS" target="_blank" rel="noopener">afourmy/eNMS</a></p><p>结合了napalm和testfsm的api工具<br><a href="https://github.com/tbotnz/netpalm" target="_blank" rel="noopener">tbotnz / netpalm</a></p><p>一个网络监控的小工具(支持NetFlow IPFIX sFlow libpcap BGP BMP RPKI IGP Streaming Telemetry)<br><a href="https://github.com/pmacct/pmacct" target="_blank" rel="noopener">pmacct / pmacct</a></p><p>一个纯python的自动化框架（好像类似ansible，思科有篇<a href="https://blogs.cisco.com/developer/nornir-python-automation-framework" target="_blank" rel="noopener">博客</a>介绍<br><a href="https://github.com/nornir-automation/nornir" target="_blank" rel="noopener">nornir-automation/nornir</a></p><p>基于nornir实现的的自动化网管系统，可以对接netbox、oxidized<br><a href="https://github.com/SUNET/cnaas-nms" target="_blank" rel="noopener">SUNET/cnaas-nms</a></p><p>一个纯python实现的网络配置备份系统,似乎数据源依赖nornir<br><a href="https://github.com/rackerlabs/stockpiler" target="_blank" rel="noopener">rackerlabs/stockpiler</a></p><p>bgp监控程序<br><a href="https://github.com/osrg/gobgp" target="_blank" rel="noopener">osrg/gobgp</a></p><p>flask实现的bgp路由监控(仿照gobgp)<br><a href="https://github.com/rhicks/bgp-dashboard" target="_blank" rel="noopener">rhicks/bgp-dashboard</a></p><p>基于yaml格式的文本上传svg格式的拓扑文件drawthe.net<br><a href="https://github.com/cidrblock/drawthe.net" target="_blank" rel="noopener">cidrblock/drawthe.net</a></p><p>python和shell实现的网线流量分析系统、可以抓取pcap文件和分析zeek日志<br><a href="https://github.com/idaholab/Malcolm" target="_blank" rel="noopener">idaholab/Malcolm</a></p><p>网络流量回溯系统，可以查看导出pcap文件<br><a href="https://github.com/aol/moloch" target="_blank" rel="noopener">aol/moloch</a></p><p>python实现并更新的smokping<br><a href="https://github.com/20c/vaping" target="_blank" rel="noopener">20c/vaping</a></p><p>雅虎的udping<br><a href="https://github.com/yahoo/UDPing" target="_blank" rel="noopener">yahoo/UDPing</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;收藏到浏览器书签时间长就忘了，star多了也懒得翻，还是记这吧。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="收藏分享" scheme="http://nbma.info/categories/%E6%94%B6%E8%97%8F%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="network" scheme="http://nbma.info/tags/network/"/>
+    
+  </entry>
   
   <entry>
     <title>优化MacOS的Anyconnect安装包</title>
@@ -497,30 +519,6 @@
       <category term="network" scheme="http://nbma.info/tags/network/"/>
     
       <category term="GETVPN" scheme="http://nbma.info/tags/GETVPN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ipsec&amp;pptp&amp;l2tp简单概念</title>
-    <link href="http://nbma.info/ipsec-pptp-l2tp/"/>
-    <id>http://nbma.info/ipsec-pptp-l2tp/</id>
-    <published>2018-05-09T02:19:08.000Z</published>
-    <updated>2019-01-11T07:30:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>写的有点乱<br><a id="more"></a></p><h2 id="动态map和静态map"><a href="#动态map和静态map" class="headerlink" title="动态map和静态map"></a>动态map和静态map</h2><p>使用场景：hub固定IP，另一端没有固定IP。适用于思科和其他厂商对接。两端都是思科可以使用EZVPN<br>peer端直接普通的静态map配置<br>hub端使用动态map<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">crypto dynamic-map DY-MAP 10</span><br><span class="line"> set transform-set TRANS </span><br><span class="line">crypto map STATIC-MAP 10000 ipsec-isakmp dynamic DY-MAP</span><br></pre></td></tr></table></figure></p><h2 id="ikev2的SVTI"><a href="#ikev2的SVTI" class="headerlink" title="ikev2的SVTI"></a>ikev2的SVTI</h2><p>待补充</p><h2 id="NAT穿越问题"><a href="#NAT穿越问题" class="headerlink" title="NAT穿越问题"></a>NAT穿越问题</h2><p>ike 1-2包同时判断对方是否支持NAT-T<br>3-4包发送NAT-D 第三个包hash自己的源目IP将值发送给B，然后对端收到后用收到的源目IP进行hash，如果不一致则后续5-6等包全都启用udp4500封装。</p><h2 id="远程拨号VPN"><a href="#远程拨号VPN" class="headerlink" title="远程拨号VPN"></a>远程拨号VPN</h2><p>1，vpdn：<br>pptp, l2tp over ipsec<br>2，EzVPN<br>3，SSL VPN</p><h3 id="pptp"><a href="#pptp" class="headerlink" title="pptp"></a>pptp</h3><p>协商过程：TCP 1723<br>PPP封装内层，外层是GRE，本身并不加密<br>IPSEC只能用来加密IP流量，而PPTP还支持非IP,如IPX等<br>在ASA上需要<code>inspect pptp</code>解决穿越问题</p><h3 id="l2tp-over-ipsec"><a href="#l2tp-over-ipsec" class="headerlink" title="l2tp over ipsec"></a>l2tp over ipsec</h3><p>L2TP:UDP1701<br>PPP封装内层，外层是UDP，本身并不加密<br>配合ipsec之后在PPP之外加上esp，对esp内部加密</p><p><strong>平常不需要使用以下技术，直接使用GRE over IPSec或者SVTI直接跑动态即可</strong></p><h2 id="RRI反向路由注入"><a href="#RRI反向路由注入" class="headerlink" title="RRI反向路由注入"></a>RRI反向路由注入</h2><p>多个ipsec vpn出口前往同一个peer是用来解决路由问题。<br>根据active sa产生前往对端通讯店的静态路由 ，下一条是对端加密点IP。<br>本地设备可以通过tag配置该路由，重分布进动态路由即可。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">crypto map XXX-MAP</span><br><span class="line"> reverse route</span><br><span class="line"> reverse route tag 10</span><br></pre></td></tr></table></figure><h2 id="DPD死亡对等体检测"><a href="#DPD死亡对等体检测" class="headerlink" title="DPD死亡对等体检测"></a>DPD死亡对等体检测</h2><p>ikev1默认没有启用keepalive机制（类似路由协议hello）,所有如果对端peer down，本地无法得知，需要等待ipsec sa超时（1小时）后才发现。而DPD就是通过心跳检测对端peer是否active</p><p>两种模式periodic(周期) 和 on-demand（按需，默认）<br><strong>periodic</strong>：周期发送，占用加解密资源，检测快。5次失败之后自动清除sa</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crypto isakmp keepalive &lt;time&gt; periodic</span><br><span class="line">clear crypto ipsec sa</span><br></pre></td></tr></table></figure><p><strong>on-demand</strong>：发送加密包出去，一定时间内没有解密包回来，这时候DPD会发送询问。如果一直有加解密，或者没有任何加解密被发送，那么不会发送查询。节约资源，但是可能存在一端sa被清，一端sa还存在</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crypto isakmp keepalive &lt;time&gt;</span><br><span class="line">clear crypto ipsec sa</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;写的有点乱&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技术笔记" scheme="http://nbma.info/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="ipsec" scheme="http://nbma.info/tags/ipsec/"/>
-    
-      <category term="netowrk" scheme="http://nbma.info/tags/netowrk/"/>
     
   </entry>
   
