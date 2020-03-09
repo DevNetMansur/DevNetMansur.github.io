@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head><meta name="generator" content="Hexo 3.8.0">
-    
-<meta charset="UTF-8">
+  <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,55 +13,11 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-
-<meta name="referrer" content="no-referrer">
-
-
-
-  <meta name="description" content="流量劫持是如何产生的？">
-
-
-
-
-  <meta name="keywords" content="network, I'm Mansur">
-
-
-
-
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="I'm Mansur">
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
-
-
-
+<meta name="description" content="流量劫持是如何产生的？"><meta name="keywords" content="network, I'm Mansur"><link rel="alternate" href="/atom.xml" title="I'm Mansur"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
 <link rel="canonical" href="http://nbma.info/traffic-hijack/">
 
-
-
-  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
-
-
-
-
-  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
-
-
-
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
-
-
-
-  
-
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126503503-1"></script>
@@ -73,10 +27,7 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-126503503-1');
-</script>
-
-
-  <script id="baidu_push">
+</script><script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -90,20 +41,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-
-
-
-
-
-
-
-
-
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true,"latex":""};
 </script>
 
-    <title> 流量劫持是如何产生的？ - I'm Mansur </title>
+    <title>流量劫持是如何产生的？ - I'm Mansur</title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -118,140 +60,70 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/">
-        <li class="mobile-menu-item">
-          
-          
-            首页
-          
-        </li>
-      </a>
-    
-      <a href="/archives/">
-        <li class="mobile-menu-item">
-          
-          
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/about">
-        <li class="mobile-menu-item">
-          
-          
-            关于
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">I'm Mansur</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
           <a class="menu-item-link" href="/">
-            
-            
-              首页
-            
-          </a>
+            首页
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/archives/">
-            
-            
-              归档
-            
-          </a>
+            归档
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/tags">
-            
-            
-              标签
-            
-          </a>
+            标签
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/about">
-            
-            
-              关于
-            
-          </a>
+            关于
+            </a>
         </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+      </ul></nav>
+</header>
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          流量劫持是如何产生的？
-        
-      </h1>
+      <h1 class="post-title">流量劫持是如何产生的？
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2014-05-16
-        </span>
-        
-          <span class="post-category">
-            
-              <a href="/categories/收藏分享/">收藏分享</a>
-            
-          </span>
-        
-        
-      </div>
+        </span><span class="post-category">
+            <a href="/categories/收藏分享/">收藏分享</a>
+            </span>
+        </div>
     </header>
 
-    
-    
-  <div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#我会被劫持吗？"><span class="toc-text">我会被劫持吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hub-嗅探"><span class="toc-text">Hub 嗅探</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MAC-欺骗"><span class="toc-text">MAC 欺骗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MAC-冲刷"><span class="toc-text">MAC 冲刷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP-攻击"><span class="toc-text">ARP 攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DHCP-钓鱼"><span class="toc-text">DHCP 钓鱼</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS-劫持"><span class="toc-text">DNS 劫持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN-入侵"><span class="toc-text">CDN 入侵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由器弱口令"><span class="toc-text">路由器弱口令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由器-CSRF"><span class="toc-text">路由器 CSRF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PPPoE-钓鱼"><span class="toc-text">PPPoE 钓鱼</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#蜜罐代理"><span class="toc-text">蜜罐代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WiFi-弱口令"><span class="toc-text">WiFi 弱口令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WiFi-热点钓鱼"><span class="toc-text">WiFi 热点钓鱼</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WiFi-强制断线"><span class="toc-text">WiFi 强制断线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WLAN-基站钓鱼"><span class="toc-text">WLAN 基站钓鱼</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结尾"><span class="toc-text">结尾</span></a></li></ol>
     </div>
-  </div>
-
-
-
-    <div class="post-content">
-      
-        <p>流量劫持，这种古老的攻击沉寂了一段时间后，最近又开始闹的沸沸扬扬。<a href="http://news.163.com/14/0401/07/9ONRBN0F00014JB6.html" target="_blank" rel="noopener">众多知名品牌的路由器相继爆出存在安全漏洞</a>，引来国内媒体纷纷报道。只要用户没改默认密码，打开一个网页甚至帖子，路由器配置就会被暗中修改。互联网一夜间变得岌岌可危。</p>
+  </div><div class="post-content"><p>流量劫持，这种古老的攻击沉寂了一段时间后，最近又开始闹的沸沸扬扬。<a href="http://news.163.com/14/0401/07/9ONRBN0F00014JB6.html" target="_blank" rel="noopener">众多知名品牌的路由器相继爆出存在安全漏洞</a>，引来国内媒体纷纷报道。只要用户没改默认密码，打开一个网页甚至帖子，路由器配置就会被暗中修改。互联网一夜间变得岌岌可危。</p>
 <a id="more"></a>
 <p>攻击还是那几种攻击，报道仍是那千篇一律的砖家提醒，以至于大家都麻木了。早已见惯运营商的各种劫持，频繁的广告弹窗，大家也无可奈何。这么多年也没出现过什么损失，也就睁只眼闭只眼。</p>
 <p>事实上，仅仅被运营商劫持算是比较幸运了。相比隐匿在暗中的神秘黑客，运营商作为公众企业还是得守法的，广告劫持虽无节操但还是有底线的。这不，能让你看见广告了，也算是在提醒你，当前网络存在被劫持的风险，得留点神；相反，一切看似风平浪静毫无异常，或许已有一个天大的间谍潜伏在网络里，随时等你上钩 —— 这可不是弹广告那样简单，而是要谋财盗号了！</p>
@@ -487,14 +359,8 @@
 </blockquote>
 <h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>就谈到这里吧，这些只是之前尝试有效的案例，事实上还有太多的途径，要是再算上系统内部的方式那就无数了。但不论如何变化，流量劫持的最终利用方式几乎是如出一辙的 —— 利用它能做些什么呢？终极危害能有多大？<a href="/traffic-hijack-2.html">请听下回分解</a>。</p>
 
-      
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
+      </div>
+      <div class="post-copyright">
     <p class="copyright-item">
       <span>原文作者: </span>
       <a href="http://nbma.info">Mansur</a>
@@ -504,135 +370,48 @@
       <a href="http://nbma.info/traffic-hijack/">http://nbma.info/traffic-hijack/</a>
     </p>
     <p class="copyright-item">
-      <span>许可协议: </span>
-      
-      <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+      <span>许可协议: </span>除特别声明外，本站文章均采用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">CC BY-NC 4.0</a>许可协议，转载请注明出处。
     </p>
   </div>
-
-
-
-      
-      
-  <div class="post-reward">
+      <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden>
     <label class="reward-button" for="reward">赞赏支持</label>
-    <div class="qr-code">
-      
-      
-        <label class="qr-code-image" for="reward">
+    <div class="qr-code"><label class="qr-code-image" for="reward">
           <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
         </label>
-      
-      
-        <label class="qr-code-image" for="reward">
+      <label class="qr-code-image" for="reward">
           <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
         </label>
-      
-    </div>
-  </div>
-
-    
-
-    
-      <footer class="post-footer">
+      </div>
+  </div><footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/network/">network</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/network/">network</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/traffic-hijack-2/">
+        <nav class="post-nav"><a class="prev" href="/traffic-hijack-2/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">流量劫持能有多大危害？</span>
         <span class="prev-text nav-mobile">上一篇</span>
       </a>
-    
-    
-      <a class="next" href="/html-merge-cells/">
+    <a class="next" href="/html-merge-cells/">
         <span class="next-text nav-default">Html合并单元格</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
           <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
-    
-  </div>
-
-
-        </div>
+    </div></div>
       </main>
 
-      <footer id="footer" class="footer">
-
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:i@nbma.info" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://twitter.com/iam__Peter" class="iconfont icon-twitter" title="twitter"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:i@nbma.info" class="iconfont icon-email" title="email"></a>
+        <a href="https://twitter.com/iam__Peter" class="iconfont icon-twitter" title="twitter"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
   <span class="power-by">
     由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
@@ -642,31 +421,18 @@
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2013 - 
-    
-    2020
-
-    <span class="heart">
+  <span class="copyright-year">&copy;2013 - 2020<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">Mansur</span>
   </span>
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
+    </div><script type="text/javascript">
     var disqus_config = function () {
         this.page.url = 'http://nbma.info/traffic-hijack/';
         this.page.identifier = 'traffic-hijack/';
@@ -680,48 +446,9 @@
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
     })();  
-  </script>
-
-  
-
-  
-
-
-
-    
-  
-
-
-
-  
-  
-
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
-
-  </body>
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+</body>
 </html>

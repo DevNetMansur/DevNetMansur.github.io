@@ -357,9 +357,9 @@
     
       <category term="centos" scheme="http://nbma.info/tags/centos/"/>
     
-      <category term="asa" scheme="http://nbma.info/tags/asa/"/>
-    
       <category term="SSLVPN" scheme="http://nbma.info/tags/SSLVPN/"/>
+    
+      <category term="asa" scheme="http://nbma.info/tags/asa/"/>
     
       <category term="monitor" scheme="http://nbma.info/tags/monitor/"/>
     
@@ -463,13 +463,13 @@
     
       <category term="network" scheme="http://nbma.info/tags/network/"/>
     
-      <category term="asa" scheme="http://nbma.info/tags/asa/"/>
-    
       <category term="ipsec" scheme="http://nbma.info/tags/ipsec/"/>
     
       <category term="SSLVPN" scheme="http://nbma.info/tags/SSLVPN/"/>
     
       <category term="EZVPN" scheme="http://nbma.info/tags/EZVPN/"/>
+    
+      <category term="asa" scheme="http://nbma.info/tags/asa/"/>
     
   </entry>
   
