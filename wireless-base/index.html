@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-<meta name="theme-color" content="#f8f5ec">
+<meta name="theme-color" content="#f8f5ec" />
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="无线基础"><meta name="keywords" content="network, I'm Mansur"><link rel="alternate" href="/atom.xml" title="I'm Mansur"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
-<link rel="canonical" href="http://nbma.info/wireless-base/">
+<meta name="description" content="无线基础"/><meta name="keywords" content="network, I'm Mansur" /><link rel="alternate" href="/atom.xml" title="I'm Mansur" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2" />
+<link rel="canonical" href="http://nbma.info/wireless-base/"/>
 
-<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2" />
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126503503-1"></script>
@@ -46,7 +46,7 @@
 </script>
 
     <title>无线基础 - I'm Mansur</title>
-  </head>
+  <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
@@ -113,7 +113,7 @@
         <span class="post-time">
           2018-03-09
         </span><span class="post-category">
-            <a href="/categories/技术笔记/">技术笔记</a>
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a>
             </span>
         </div>
     </header>
@@ -121,13 +121,12 @@
     <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#思科AireOS"><span class="toc-text">思科AireOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Aruba基本配置"><span class="toc-text">Aruba基本配置</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E7%A7%91AireOS"><span class="toc-text">思科AireOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Aruba%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-text">Aruba基本配置</span></a></li></ol>
     </div>
   </div><div class="post-content"><p>最近梳理了一般无线CCNA的支持还有Aruba的无线基本配置</p>
-<a id="more"></a>
-<h2 id="思科AireOS"><a href="#思科AireOS" class="headerlink" title="思科AireOS"></a>思科AireOS</h2><p>Service-port interface :带外网管<br>Manager Interface: PC https网管，WLC发起连接radius时使用<br>AP Manager Interface: 用于AP寻找WLC ，与AP建立CAPWAP隧道；8.0以后版本默认和manager interface共用一个port<br>Virtual Interface: 用于对无线用户隐藏真实的dhcp服务器地址（仅在中心转发时）<br>Dynamic Interface: 关联有线网络的VLAN</p>
-<p>创建WLAN的时候需要配置SSID，而且使用中心转发的时候需要关联对应的dynamic interface</p>
-<p>Option 43选项：在dhcp下配置<code>option 43 hex f104.0a01.0164</code><br> f1固定，04表示一个控制器地址，08表示两个控制器地址<br>0a010164即10.1.1.100</p>
+<span id="more"></span>
+
+<h2 id="思科AireOS"><a href="#思科AireOS" class="headerlink" title="思科AireOS"></a>思科AireOS</h2><p>Service-port interface :带外网管<br>Manager Interface: PC https网管，WLC发起连接radius时使用<br>AP Manager Interface: 用于AP寻找WLC ，与AP建立CAPWAP隧道；8.0以后版本默认和manager interface共用一个port<br>Virtual Interface: 用于对无线用户隐藏真实的dhcp服务器地址（仅在中心转发时）<br>Dynamic Interface: 关联有线网络的VLAN<br> <br>创建WLAN的时候需要配置SSID，而且使用中心转发的时候需要关联对应的dynamic interface<br> <br>Option 43选项：在dhcp下配置<code>option 43 hex f104.0a01.0164</code><br> f1固定，04表示一个控制器地址，08表示两个控制器地址<br>0a010164即10.1.1.100</p>
 <h2 id="Aruba基本配置"><a href="#Aruba基本配置" class="headerlink" title="Aruba基本配置"></a>Aruba基本配置</h2><p>配置vlan, SVI<br>配置上联trunk<br>配置网关<br>*配置环回口（默认使用VLan1作为控制器地址）</p>
 <p>配置DHCP，指定AC地址<br> dns：解析Aruba-master到AC<br> dhcp option 43：<br> ADP：Aruba Discovry Protocol，二层广播或三层组播239.0.82.11</p>
 <p>创建AP Group<br>将AP加入group<br>在group中创建virtual AP<br>virtual AP关联vlan</p>
@@ -149,13 +148,13 @@
     </p>
   </div>
       <div class="post-reward">
-    <input type="checkbox" name="reward" id="reward" hidden>
+    <input type="checkbox" name="reward" id="reward" hidden />
     <label class="reward-button" for="reward">赞赏支持</label>
     <div class="qr-code"><label class="qr-code-image" for="reward">
-          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+          <img class="image" src="/img/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
         </label>
       <label class="qr-code-image" for="reward">
-          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+          <img class="image" src="/img/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
         </label>
       </div>
   </div><footer class="post-footer">
@@ -177,26 +176,25 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:i@nbma.info" class="iconfont icon-email" title="email"></a>
-        <a href="https://twitter.com/iam__Peter" class="iconfont icon-twitter" title="twitter"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
-  <span class="copyright-year">&copy;2013 - 2020<span class="heart">
+  <span class="copyright-year">&copy;2013 - 2021<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">Mansur</span>
@@ -225,5 +223,5 @@
   <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
   <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
   <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
-</body>
+<!-- hexo injector body_end start --><script src="/js/post_date.js"></script><!-- hexo injector body_end end --></body>
 </html>

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-<meta name="theme-color" content="#f8f5ec">
+<meta name="theme-color" content="#f8f5ec" />
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="ipsec&pptp&l2tp简单概念"><meta name="keywords" content="network, ipsec, I'm Mansur"><link rel="alternate" href="/atom.xml" title="I'm Mansur"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
-<link rel="canonical" href="http://nbma.info/ipsec-pptp-l2tp/">
+<meta name="description" content="ipsec&pptp&l2tp简单概念"/><meta name="keywords" content="network, ipsec, I'm Mansur" /><link rel="alternate" href="/atom.xml" title="I'm Mansur" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2" />
+<link rel="canonical" href="http://nbma.info/ipsec-pptp-l2tp/"/>
 
-<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2" />
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126503503-1"></script>
@@ -46,7 +46,7 @@
 </script>
 
     <title>ipsec&pptp&l2tp简单概念 - I'm Mansur</title>
-  </head>
+  <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
@@ -113,7 +113,7 @@
         <span class="post-time">
           2018-05-09
         </span><span class="post-category">
-            <a href="/categories/技术笔记/">技术笔记</a>
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a>
             </span>
         </div>
     </header>
@@ -121,10 +121,14 @@
     <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#动态map和静态map"><span class="toc-text">动态map和静态map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ikev2的SVTI"><span class="toc-text">ikev2的SVTI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NAT穿越问题"><span class="toc-text">NAT穿越问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#远程拨号VPN"><span class="toc-text">远程拨号VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pptp"><span class="toc-text">pptp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#l2tp-over-ipsec"><span class="toc-text">l2tp over ipsec</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RRI反向路由注入"><span class="toc-text">RRI反向路由注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DPD死亡对等体检测"><span class="toc-text">DPD死亡对等体检测</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81map%E5%92%8C%E9%9D%99%E6%80%81map"><span class="toc-text">动态map和静态map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ikev2%E7%9A%84SVTI"><span class="toc-text">ikev2的SVTI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NAT%E7%A9%BF%E8%B6%8A%E9%97%AE%E9%A2%98"><span class="toc-text">NAT穿越问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%8B%A8%E5%8F%B7VPN"><span class="toc-text">远程拨号VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pptp"><span class="toc-text">pptp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#l2tp-over-ipsec"><span class="toc-text">l2tp over ipsec</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RRI%E5%8F%8D%E5%90%91%E8%B7%AF%E7%94%B1%E6%B3%A8%E5%85%A5"><span class="toc-text">RRI反向路由注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DPD%E6%AD%BB%E4%BA%A1%E5%AF%B9%E7%AD%89%E4%BD%93%E6%A3%80%E6%B5%8B"><span class="toc-text">DPD死亡对等体检测</span></a></li></ol>
     </div>
-  </div><div class="post-content"><p>写的有点乱<br><a id="more"></a></p>
-<h2 id="动态map和静态map"><a href="#动态map和静态map" class="headerlink" title="动态map和静态map"></a>动态map和静态map</h2><p>使用场景：hub固定IP，另一端没有固定IP。适用于思科和其他厂商对接。两端都是思科可以使用EZVPN<br>peer端直接普通的静态map配置<br>hub端使用动态map<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">crypto dynamic-map DY-MAP 10</span><br><span class="line"> set transform-set TRANS </span><br><span class="line">crypto map STATIC-MAP 10000 ipsec-isakmp dynamic DY-MAP</span><br></pre></td></tr></table></figure></p>
+  </div><div class="post-content"><p>写的有点乱</p>
+<span id="more"></span>
+
+<h2 id="动态map和静态map"><a href="#动态map和静态map" class="headerlink" title="动态map和静态map"></a>动态map和静态map</h2><p>使用场景：hub固定IP，另一端没有固定IP。适用于思科和其他厂商对接。两端都是思科可以使用EZVPN<br>peer端直接普通的静态map配置<br>hub端使用动态map</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">crypto dynamic-map DY-MAP 10</span><br><span class="line"> set transform-set TRANS </span><br><span class="line">crypto map STATIC-MAP 10000 ipsec-isakmp dynamic DY-MAP</span><br></pre></td></tr></table></figure>
+
 <h2 id="ikev2的SVTI"><a href="#ikev2的SVTI" class="headerlink" title="ikev2的SVTI"></a>ikev2的SVTI</h2><p>待补充</p>
 <h2 id="NAT穿越问题"><a href="#NAT穿越问题" class="headerlink" title="NAT穿越问题"></a>NAT穿越问题</h2><p>ike 1-2包同时判断对方是否支持NAT-T<br>3-4包发送NAT-D 第三个包hash自己的源目IP将值发送给B，然后对端收到后用收到的源目IP进行hash，如果不一致则后续5-6等包全都启用udp4500封装。</p>
 <h2 id="远程拨号VPN"><a href="#远程拨号VPN" class="headerlink" title="远程拨号VPN"></a>远程拨号VPN</h2><p>1，vpdn：<br>pptp, l2tp over ipsec<br>2，EzVPN<br>3，SSL VPN</p>
@@ -133,9 +137,11 @@
 <p><strong>平常不需要使用以下技术，直接使用GRE over IPSec或者SVTI直接跑动态即可</strong></p>
 <h2 id="RRI反向路由注入"><a href="#RRI反向路由注入" class="headerlink" title="RRI反向路由注入"></a>RRI反向路由注入</h2><p>多个ipsec vpn出口前往同一个peer是用来解决路由问题。<br>根据active sa产生前往对端通讯店的静态路由 ，下一条是对端加密点IP。<br>本地设备可以通过tag配置该路由，重分布进动态路由即可。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">crypto map XXX-MAP</span><br><span class="line"> reverse route</span><br><span class="line"> reverse route tag 10</span><br></pre></td></tr></table></figure>
+
 <h2 id="DPD死亡对等体检测"><a href="#DPD死亡对等体检测" class="headerlink" title="DPD死亡对等体检测"></a>DPD死亡对等体检测</h2><p>ikev1默认没有启用keepalive机制（类似路由协议hello）,所有如果对端peer down，本地无法得知，需要等待ipsec sa超时（1小时）后才发现。而DPD就是通过心跳检测对端peer是否active</p>
 <p>两种模式periodic(周期) 和 on-demand（按需，默认）<br><strong>periodic</strong>：周期发送，占用加解密资源，检测快。5次失败之后自动清除sa</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crypto isakmp keepalive &lt;time&gt; periodic</span><br><span class="line">clear crypto ipsec sa</span><br></pre></td></tr></table></figure>
+
 <p><strong>on-demand</strong>：发送加密包出去，一定时间内没有解密包回来，这时候DPD会发送询问。如果一直有加解密，或者没有任何加解密被发送，那么不会发送查询。节约资源，但是可能存在一端sa被清，一端sa还存在</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crypto isakmp keepalive &lt;time&gt;</span><br><span class="line">clear crypto ipsec sa</span><br></pre></td></tr></table></figure>
 
@@ -154,13 +160,13 @@
     </p>
   </div>
       <div class="post-reward">
-    <input type="checkbox" name="reward" id="reward" hidden>
+    <input type="checkbox" name="reward" id="reward" hidden />
     <label class="reward-button" for="reward">赞赏支持</label>
     <div class="qr-code"><label class="qr-code-image" for="reward">
-          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
+          <img class="image" src="/img/68e0aeafly1frp3nwyrulj20jq0jqwh1.jpg" title="wechat">
         </label>
       <label class="qr-code-image" for="reward">
-          <img class="image" src="https://wx1.sinaimg.cn/large/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
+          <img class="image" src="/img/68e0aeafly1frp3nsphm6j20jq0jqacp.jpg" title="alipay">
         </label>
       </div>
   </div><footer class="post-footer">
@@ -183,26 +189,25 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:i@nbma.info" class="iconfont icon-email" title="email"></a>
-        <a href="https://twitter.com/iam__Peter" class="iconfont icon-twitter" title="twitter"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
-  <span class="copyright-year">&copy;2013 - 2020<span class="heart">
+  <span class="copyright-year">&copy;2013 - 2021<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">Mansur</span>
@@ -231,5 +236,5 @@
   <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
   <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
   <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
-</body>
+<!-- hexo injector body_end start --><script src="/js/post_date.js"></script><!-- hexo injector body_end end --></body>
 </html>
